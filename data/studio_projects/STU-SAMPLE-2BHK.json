@@ -1,0 +1,1194 @@
+{
+  "project_id": "STU-SAMPLE-2BHK",
+  "project_name": "Contemporary 2-Story Villa (Seed Model)",
+  "source_filename": "villa_canonical.dxf",
+  "source_format": "DXF",
+  "units": "meters",
+  "scale_factor": 1.0,
+  "scale_verified": true,
+  "pixel_scale_ratio": null,
+  "building": {
+    "building_id": "bld_263d42",
+    "name": "Contemporary 2-Story Residential Villa",
+    "levels": [
+      {
+        "level_id": "lvl_ground",
+        "name": "Ground Floor",
+        "elevation_m": 0.0,
+        "floor_to_floor_height_m": 3.0,
+        "default_wall_height_m": 3.0,
+        "slab_thickness_m": 0.15,
+        "is_visible": true,
+        "opacity": 1.0,
+        "walls": [
+          {
+            "wall_id": "GF_W_FRONT",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "end": {
+              "x": 12.0,
+              "y": 0.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "GF_D_MAIN",
+                "element_type": "DOOR",
+                "wall_id": null,
+                "offset_along_wall_m": 3.5,
+                "width_m": 1.2,
+                "height_m": 2.2,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              },
+              {
+                "opening_id": "GF_W_LIV1",
+                "element_type": "WINDOW",
+                "wall_id": null,
+                "offset_along_wall_m": 8.0,
+                "width_m": 1.8,
+                "height_m": 1.4,
+                "sill_height_m": 0.8,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "GF_W_RIGHT",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.0,
+              "y": 0.0
+            },
+            "end": {
+              "x": 12.0,
+              "y": 9.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-BRK-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "GF_W_KIT",
+                "element_type": "WINDOW",
+                "wall_id": null,
+                "offset_along_wall_m": 4.5,
+                "width_m": 1.5,
+                "height_m": 1.2,
+                "sill_height_m": 1.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "GF_W_BACK",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.0,
+              "y": 9.0
+            },
+            "end": {
+              "x": 0.0,
+              "y": 9.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "GF_W_BED_G",
+                "element_type": "WINDOW",
+                "wall_id": null,
+                "offset_along_wall_m": 3.0,
+                "width_m": 1.5,
+                "height_m": 1.2,
+                "sill_height_m": 0.9,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              },
+              {
+                "opening_id": "GF_D_PATIO",
+                "element_type": "DOOR",
+                "wall_id": null,
+                "offset_along_wall_m": 8.5,
+                "width_m": 1.0,
+                "height_m": 2.1,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "GF_W_LEFT",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.0,
+              "y": 9.0
+            },
+            "end": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "GF_W_DIV1",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.5,
+              "y": 0.0
+            },
+            "end": {
+              "x": 6.5,
+              "y": 5.5
+            },
+            "thickness_m": 0.15,
+            "height_m": 3.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-02",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "GF_D_KIT",
+                "element_type": "DOOR",
+                "wall_id": null,
+                "offset_along_wall_m": 2.8,
+                "width_m": 1.0,
+                "height_m": 2.1,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "GF_W_DIV2",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.0,
+              "y": 5.5
+            },
+            "end": {
+              "x": 6.5,
+              "y": 5.5
+            },
+            "thickness_m": 0.15,
+            "height_m": 3.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-02",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "GF_D_GBED",
+                "element_type": "DOOR",
+                "wall_id": null,
+                "offset_along_wall_m": 4.5,
+                "width_m": 0.9,
+                "height_m": 2.1,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          }
+        ],
+        "doors": [],
+        "windows": [],
+        "rooms": [
+          {
+            "room_id": "GF_R_LIVING",
+            "element_type": "ROOM",
+            "name": "Living & Dining Hall",
+            "room_type": "LIVING",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 6.5,
+                "y": 0.0
+              },
+              {
+                "x": 6.5,
+                "y": 5.5
+              },
+              {
+                "x": 0.0,
+                "y": 5.5
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "GF_R_KITCHEN",
+            "element_type": "ROOM",
+            "name": "Modular Kitchen",
+            "room_type": "KITCHEN",
+            "boundary_polygon": [
+              {
+                "x": 6.5,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 5.5
+              },
+              {
+                "x": 6.5,
+                "y": 5.5
+              }
+            ],
+            "floor_material_id": "MAT-GRAN-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "GF_R_BED1",
+            "element_type": "ROOM",
+            "name": "Guest Bedroom",
+            "room_type": "BEDROOM",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 5.5
+              },
+              {
+                "x": 6.5,
+                "y": 5.5
+              },
+              {
+                "x": 6.5,
+                "y": 9.0
+              },
+              {
+                "x": 0.0,
+                "y": 9.0
+              }
+            ],
+            "floor_material_id": "MAT-WOOD-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          }
+        ],
+        "stairs": [
+          {
+            "stair_id": "GF_STAIR_01",
+            "element_type": "STAIRCASE",
+            "start": {
+              "x": 7.5,
+              "y": 6.0
+            },
+            "end": {
+              "x": 7.5,
+              "y": 8.8
+            },
+            "width_m": 1.0,
+            "total_rise_m": 3.0,
+            "tread_depth_m": 0.25,
+            "riser_height_m": 0.175,
+            "num_steps": 16,
+            "stair_type": "STRAIGHT",
+            "has_handrail": true,
+            "material_id": "MAT-WOOD-01",
+            "confidence": 0.9,
+            "verified": false
+          }
+        ],
+        "columns": [],
+        "slabs": [
+          {
+            "slab_id": "GF_SLAB_01",
+            "element_type": "SLAB",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 9.0
+              },
+              {
+                "x": 0.0,
+                "y": 9.0
+              }
+            ],
+            "thickness_m": 0.2,
+            "elevation_m": 0.0,
+            "material_id": "MAT-CONC-01",
+            "confidence": 1.0
+          }
+        ]
+      },
+      {
+        "level_id": "lvl_first",
+        "name": "Level 02 (First Floor)",
+        "elevation_m": 3.0,
+        "floor_to_floor_height_m": 3.0,
+        "default_wall_height_m": 3.0,
+        "slab_thickness_m": 0.15,
+        "is_visible": true,
+        "opacity": 1.0,
+        "walls": [
+          {
+            "wall_id": "FF_W_FRONT",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "end": {
+              "x": 12.0,
+              "y": 0.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "FF_W_MBR",
+                "element_type": "WINDOW",
+                "wall_id": null,
+                "offset_along_wall_m": 4.0,
+                "width_m": 2.4,
+                "height_m": 2.1,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "FF_W_RIGHT",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.0,
+              "y": 0.0
+            },
+            "end": {
+              "x": 12.0,
+              "y": 9.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "FF_W_BACK",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.0,
+              "y": 9.0
+            },
+            "end": {
+              "x": 0.0,
+              "y": 9.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "FF_W_BED2",
+                "element_type": "WINDOW",
+                "wall_id": null,
+                "offset_along_wall_m": 6.0,
+                "width_m": 1.6,
+                "height_m": 1.2,
+                "sill_height_m": 0.9,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "FF_W_LEFT",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.0,
+              "y": 9.0
+            },
+            "end": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          }
+        ],
+        "doors": [],
+        "windows": [],
+        "rooms": [
+          {
+            "room_id": "FF_R_MBR",
+            "element_type": "ROOM",
+            "name": "Master Bedroom Suite",
+            "room_type": "MASTER_BEDROOM",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 7.0,
+                "y": 0.0
+              },
+              {
+                "x": 7.0,
+                "y": 5.5
+              },
+              {
+                "x": 0.0,
+                "y": 5.5
+              }
+            ],
+            "floor_material_id": "MAT-WOOD-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "FF_R_TERRACE",
+            "element_type": "ROOM",
+            "name": "Covered Open Balcony",
+            "room_type": "BALCONY",
+            "boundary_polygon": [
+              {
+                "x": 7.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 5.5
+              },
+              {
+                "x": 7.0,
+                "y": 5.5
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          }
+        ],
+        "stairs": [],
+        "columns": [],
+        "slabs": [
+          {
+            "slab_id": "FF_SLAB_01",
+            "element_type": "SLAB",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 9.0
+              },
+              {
+                "x": 0.0,
+                "y": 9.0
+              }
+            ],
+            "thickness_m": 0.15,
+            "elevation_m": 3.0,
+            "material_id": "MAT-CONC-01",
+            "confidence": 1.0
+          },
+          {
+            "slab_id": "ROOF_SLAB_01",
+            "element_type": "SLAB",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 9.0
+              },
+              {
+                "x": 0.0,
+                "y": 9.0
+              }
+            ],
+            "thickness_m": 0.15,
+            "elevation_m": 6.0,
+            "material_id": "MAT-CONC-01",
+            "confidence": 1.0
+          }
+        ]
+      },
+      {
+        "level_id": "lvl_3",
+        "name": "Second Floor",
+        "elevation_m": 6.0,
+        "floor_to_floor_height_m": 3.0,
+        "default_wall_height_m": 3.0,
+        "slab_thickness_m": 0.15,
+        "is_visible": true,
+        "opacity": 1.0,
+        "walls": [
+          {
+            "wall_id": "EXT_W_1",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "end": {
+              "x": 12.0,
+              "y": 0.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "WN_003",
+                "element_type": "WINDOW",
+                "wall_id": "EXT_W_1",
+                "offset_along_wall_m": 4.305000000000001,
+                "width_m": 1.4,
+                "height_m": 1.2,
+                "sill_height_m": 0.9,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              },
+              {
+                "opening_id": "WN_004",
+                "element_type": "WINDOW",
+                "wall_id": "EXT_W_1",
+                "offset_along_wall_m": 10.075000000000001,
+                "width_m": 0.9,
+                "height_m": 1.2,
+                "sill_height_m": 1.2,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "EXT_W_2",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.0,
+              "y": 0.0
+            },
+            "end": {
+              "x": 12.0,
+              "y": 9.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "EXT_W_3",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.0,
+              "y": 9.0
+            },
+            "end": {
+              "x": 0.0,
+              "y": 9.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "WN_001",
+                "element_type": "WINDOW",
+                "wall_id": "EXT_W_3",
+                "offset_along_wall_m": 3.1149999999999998,
+                "width_m": 1.4,
+                "height_m": 1.2,
+                "sill_height_m": 0.9,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              },
+              {
+                "opening_id": "WN_002",
+                "element_type": "WINDOW",
+                "wall_id": "EXT_W_3",
+                "offset_along_wall_m": 8.885,
+                "width_m": 1.4,
+                "height_m": 1.2,
+                "sill_height_m": 0.9,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "EXT_W_4",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.0,
+              "y": 9.0
+            },
+            "end": {
+              "x": 0.0,
+              "y": 0.0
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "INT_W_5",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.23,
+              "y": 4.9292
+            },
+            "end": {
+              "x": 11.77,
+              "y": 4.9292
+            },
+            "thickness_m": 0.15,
+            "height_m": 3.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-02",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "DR_001",
+                "element_type": "DOOR",
+                "wall_id": "INT_W_5",
+                "offset_along_wall_m": 2.885,
+                "width_m": 0.9,
+                "height_m": 2.1,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              },
+              {
+                "opening_id": "DR_002",
+                "element_type": "DOOR",
+                "wall_id": "INT_W_5",
+                "offset_along_wall_m": 8.655,
+                "width_m": 0.9,
+                "height_m": 2.1,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "INT_W_6",
+            "element_type": "WALL",
+            "start": {
+              "x": 0.23,
+              "y": 3.7292
+            },
+            "end": {
+              "x": 11.77,
+              "y": 3.7292
+            },
+            "thickness_m": 0.15,
+            "height_m": 3.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-02",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "DR_003",
+                "element_type": "DOOR",
+                "wall_id": "INT_W_6",
+                "offset_along_wall_m": 4.075,
+                "width_m": 0.9,
+                "height_m": 2.1,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              },
+              {
+                "opening_id": "DR_004",
+                "element_type": "DOOR",
+                "wall_id": "INT_W_6",
+                "offset_along_wall_m": 9.845,
+                "width_m": 0.75,
+                "height_m": 2.1,
+                "sill_height_m": 0.0,
+                "confidence": 1.0,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "INT_W_7",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.0,
+              "y": 4.93
+            },
+            "end": {
+              "x": 6.0,
+              "y": 8.77
+            },
+            "thickness_m": 0.15,
+            "height_m": 3.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-02",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "INT_W_8",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.38,
+              "y": 0.23
+            },
+            "end": {
+              "x": 8.38,
+              "y": 3.73
+            },
+            "thickness_m": 0.15,
+            "height_m": 3.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-02",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          }
+        ],
+        "doors": [],
+        "windows": [],
+        "rooms": [
+          {
+            "room_id": "R_01",
+            "element_type": "ROOM",
+            "name": "Bedroom 1",
+            "room_type": "BEDROOM",
+            "boundary_polygon": [
+              {
+                "x": 0.23,
+                "y": 4.93
+              },
+              {
+                "x": 6.0,
+                "y": 4.93
+              },
+              {
+                "x": 6.0,
+                "y": 8.77
+              },
+              {
+                "x": 0.23,
+                "y": 8.77
+              }
+            ],
+            "floor_material_id": "MAT-WOOD-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "R_03",
+            "element_type": "ROOM",
+            "name": "Bedroom 3",
+            "room_type": "BEDROOM",
+            "boundary_polygon": [
+              {
+                "x": 6.0,
+                "y": 4.93
+              },
+              {
+                "x": 11.77,
+                "y": 4.93
+              },
+              {
+                "x": 11.77,
+                "y": 8.77
+              },
+              {
+                "x": 6.0,
+                "y": 8.77
+              }
+            ],
+            "floor_material_id": "MAT-WOOD-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "R_02",
+            "element_type": "ROOM",
+            "name": "Bedroom 2",
+            "room_type": "BEDROOM",
+            "boundary_polygon": [
+              {
+                "x": 0.23,
+                "y": 0.23
+              },
+              {
+                "x": 8.38,
+                "y": 0.23
+              },
+              {
+                "x": 8.38,
+                "y": 3.73
+              },
+              {
+                "x": 0.23,
+                "y": 3.73
+              }
+            ],
+            "floor_material_id": "MAT-WOOD-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "R_04",
+            "element_type": "ROOM",
+            "name": "Common Washroom",
+            "room_type": "BATHROOM",
+            "boundary_polygon": [
+              {
+                "x": 8.38,
+                "y": 0.23
+              },
+              {
+                "x": 11.770000000000001,
+                "y": 0.23
+              },
+              {
+                "x": 11.770000000000001,
+                "y": 3.73
+              },
+              {
+                "x": 8.38,
+                "y": 3.73
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_CORRIDOR",
+            "element_type": "ROOM",
+            "name": "Central Circulation Hall",
+            "room_type": "CORRIDOR",
+            "boundary_polygon": [
+              {
+                "x": 0.23,
+                "y": 3.7292
+              },
+              {
+                "x": 11.77,
+                "y": 3.7292
+              },
+              {
+                "x": 11.77,
+                "y": 4.9292
+              },
+              {
+                "x": 0.23,
+                "y": 4.9292
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 1.0,
+            "confidence_level": "HIGH",
+            "verified": false
+          }
+        ],
+        "stairs": [
+          {
+            "stair_id": "STAIR_L2_01",
+            "element_type": "STAIRCASE",
+            "start": {
+              "x": 7.5,
+              "y": 6.0
+            },
+            "end": {
+              "x": 7.5,
+              "y": 8.8
+            },
+            "width_m": 1.0,
+            "total_rise_m": 3.0,
+            "tread_depth_m": 0.25,
+            "riser_height_m": 0.175,
+            "num_steps": 16,
+            "stair_type": "STRAIGHT",
+            "has_handrail": true,
+            "material_id": "MAT-WOOD-01",
+            "confidence": 0.9,
+            "verified": false
+          }
+        ],
+        "columns": [],
+        "slabs": [
+          {
+            "slab_id": "SLAB_ELEV_6",
+            "element_type": "SLAB",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 9.0
+              },
+              {
+                "x": 0.0,
+                "y": 9.0
+              }
+            ],
+            "thickness_m": 0.15,
+            "elevation_m": 6.0,
+            "material_id": "MAT-CONC-01",
+            "confidence": 1.0
+          },
+          {
+            "slab_id": "ROOF_SLAB_TOP",
+            "element_type": "SLAB",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 0.0
+              },
+              {
+                "x": 12.0,
+                "y": 9.0
+              },
+              {
+                "x": 0.0,
+                "y": 9.0
+              }
+            ],
+            "thickness_m": 0.15,
+            "elevation_m": 9.0,
+            "material_id": "MAT-CONC-01",
+            "confidence": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "seed": true,
+    "architect": "BuildSmartAI Studio"
+  },
+  "created_at": "2026-11-06T06:18:17.647428+00:00",
+  "updated_at": "2026-11-06T06:18:17.647443+00:00"
+}

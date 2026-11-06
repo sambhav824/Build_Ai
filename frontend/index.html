@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildSmartAI — Autonomous Multi-Agent Construction Intelligence</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Three.js CDN for Interactive 3D Viewer -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          colors: {
+            desert: {
+              50: '#FDFCF9',
+              100: '#FAF6EE',
+              200: '#F4EBDA',
+              300: '#EBDCBF',
+              400: '#DEC59B',
+              500: '#D4A853', // Signature Desert Yellow
+              600: '#C2913A', // Rich Desert Ochre
+              700: '#9E7127',
+              800: '#79531D',
+              900: '#543813'
+            },
+            site: {
+              white: '#FFFFFF',
+              sand: '#F7F4EE',
+              paper: '#FAF8F5',
+              border: '#E8E1D5',
+              dark: '#1C212D',
+              charcoal: '#262D3D',
+              slate: '#4A5568',
+              muted: '#718096'
+            }
+          },
+          boxShadow: {
+            'desert': '0 10px 25px -5px rgba(212, 168, 83, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.04)',
+            'desert-lg': '0 20px 35px -10px rgba(212, 168, 83, 0.22), 0 10px 15px -5px rgba(0, 0, 0, 0.06)',
+            'card': '0 4px 20px -2px rgba(28, 33, 45, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02)'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: #FAF8F5;
+      background-image: radial-gradient(#D4A853 0.75px, transparent 0.75px);
+      background-size: 28px 28px;
+      color: #1C212D;
+    }
+    .blueprint-card {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border: 1px solid #E8E1D5;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .blueprint-card:hover {
+      border-color: #D4A853;
+    }
+    .dark-slate-card {
+      background: #1C212D;
+      color: #FFFFFF;
+      border: 1px solid #2D3748;
+    }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #FAF6EE; }
+    ::-webkit-scrollbar-thumb { background: #D4A853; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #C2913A; }
+
+    /* Video Scanline & Vignette Effect */
+    .video-overlay-scrim {
+      background: linear-gradient(180deg, rgba(28, 33, 45, 0.45) 0%, rgba(28, 33, 45, 0.75) 100%);
+    }
+    .construction-grid-mark {
+      background-image: linear-gradient(to right, rgba(212, 168, 83, 0.12) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(212, 168, 83, 0.12) 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col md:flex-row antialiased overflow-x-hidden">
+
+  <!-- ========================================================================= -->
+  <!-- SIDEBAR NAVIGATION: ARCHITECTURAL DRAFTING PALETTE (WHITE & DESERT YELLOW) -->
+  <!-- ========================================================================= -->
+  <aside class="w-full md:w-72 bg-white/95 border-r border-site-border flex flex-col justify-between p-5 flex-shrink-0 z-30 shadow-sm backdrop-blur-md">
+    <div>
+      <!-- Brand Logo & Header with Construction Site Hardhat Badge -->
+      <div class="flex items-center gap-3.5 px-2 py-2 mb-7">
+        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-desert-500 to-desert-600 flex items-center justify-center text-white font-bold text-xl shadow-desert">
+          <i class="fa-solid fa-helmet-safety text-white drop-shadow-sm"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <h1 class="text-xl font-extrabold tracking-tight text-site-dark">BUILDSMART<span class="text-desert-500">AI</span></h1>
+            <span class="text-[9px] px-1.5 py-0.5 rounded bg-desert-100 text-desert-700 font-bold border border-desert-300">2.0</span>
+          </div>
+          <p class="text-[11px] text-desert-600 font-semibold tracking-wider uppercase flex items-center gap-1">
+            <span class="w-1.5 h-1.5 rounded-full bg-desert-500 animate-pulse"></span> Multi-Agent Site Engine
+          </p>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="space-y-1.5 text-sm font-semibold">
+        <button onclick="switchTab('overview')" id="nav-overview" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-white bg-desert-500 shadow-desert transition">
+          <i class="fa-solid fa-chart-pie w-5 text-center"></i>
+          <span>Site Overview</span>
+          <span class="ml-auto text-[10px] font-mono font-bold bg-white/20 px-2 py-0.5 rounded-full">LIVE</span>
+        </button>
+
+        <button onclick="switchTab('projects')" id="nav-projects" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-site-slate hover:text-site-dark hover:bg-desert-50 transition">
+          <i class="fa-solid fa-folder-tree w-5 text-center text-desert-600"></i>
+          <span>Project Vault</span>
+        </button>
+
+        <button onclick="switchTab('planning')" id="nav-planning" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-site-slate hover:text-site-dark hover:bg-desert-50 transition">
+          <i class="fa-solid fa-compass-drafting w-5 text-center text-desert-600"></i>
+          <span>AI Site Planning</span>
+          <span class="ml-auto text-[9px] font-bold text-desert-600 uppercase">Agent 1</span>
+        </button>
+
+        <!-- BuildSmart 3D Studio (New Architectural BIM Module) -->
+        <a href="/studio" target="_blank" class="w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-desert-800 bg-gradient-to-r from-desert-100 to-desert-50 hover:from-desert-200 hover:to-desert-100 border border-desert-300 transition shadow-sm font-bold">
+          <i class="fa-solid fa-cube w-5 text-center text-desert-600 text-base"></i>
+          <span>BuildSmart 3D Studio</span>
+          <span class="ml-auto text-[9px] font-extrabold bg-desert-500 text-white px-2 py-0.5 rounded-full uppercase tracking-wider animate-pulse">3D BIM</span>
+        </a>
+
+        <button onclick="switchTab('design')" id="nav-design" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-site-slate hover:text-site-dark hover:bg-desert-50 transition">
+          <i class="fa-solid fa-cube w-5 text-center text-desert-600"></i>
+          <span>2D & 3D Spatial CAD</span>
+          <span class="ml-auto text-[9px] font-bold text-desert-600 uppercase">Agent 3</span>
+        </button>
+
+        <button onclick="switchTab('estimation')" id="nav-estimation" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-site-slate hover:text-site-dark hover:bg-desert-50 transition">
+          <i class="fa-solid fa-calculator w-5 text-center text-desert-600"></i>
+          <span>BOQ & Costing</span>
+          <span class="ml-auto text-[9px] font-bold text-desert-600 uppercase">Agent 2</span>
+        </button>
+
+        <button onclick="switchTab('procurement')" id="nav-procurement" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-site-slate hover:text-site-dark hover:bg-desert-50 transition">
+          <i class="fa-solid fa-truck-ramp-box w-5 text-center text-desert-600"></i>
+          <span>Site Procurement</span>
+        </button>
+
+        <button onclick="switchTab('schedule')" id="nav-schedule" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-site-slate hover:text-site-dark hover:bg-desert-50 transition">
+          <i class="fa-solid fa-calendar-days w-5 text-center text-desert-600"></i>
+          <span>CPM Gantt Schedule</span>
+          <span class="ml-auto text-[9px] font-bold text-desert-600 uppercase">Agent 4</span>
+        </button>
+
+        <button onclick="switchTab('monitoring')" id="nav-monitoring" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-site-slate hover:text-site-dark hover:bg-desert-50 transition">
+          <i class="fa-solid fa-video w-5 text-center text-desert-600"></i>
+          <span>Site Vision AI</span>
+          <span class="ml-auto text-[9px] font-bold text-desert-600 uppercase">Agent 5</span>
+        </button>
+
+        <button onclick="switchTab('reports')" id="nav-reports" class="nav-btn w-full flex items-center gap-3.5 px-3.5 py-2.5 rounded-xl text-site-slate hover:text-site-dark hover:bg-desert-50 transition">
+          <i class="fa-solid fa-file-pdf w-5 text-center text-desert-600"></i>
+          <span>Reports & Blueprint</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Live Site Status Pill & Video Controller -->
+    <div class="mt-6 pt-4 border-t border-site-border space-y-3">
+      <div class="p-3.5 rounded-xl bg-desert-50 border border-desert-200">
+        <div class="flex items-center justify-between text-xs mb-1">
+          <span class="text-site-slate font-medium">Orchestrator Node</span>
+          <span class="flex items-center gap-1.5 text-emerald-600 font-bold text-[11px]">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span> ONLINE
+          </span>
+        </div>
+        <p class="text-xs text-site-slate">Active Project: <span id="active-project-pill" class="text-desert-700 font-bold font-mono">BS-1001</span></p>
+      </div>
+
+      <div class="flex items-center justify-between text-[11px] text-site-muted px-1">
+        <span>Site Cam Stream</span>
+        <button onclick="toggleAmbientVideo()" id="btn-toggle-video" class="text-desert-600 hover:text-desert-700 font-bold flex items-center gap-1">
+          <i class="fa-solid fa-pause" id="video-toggle-icon"></i> <span id="video-toggle-text">Pause</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ========================================================================= -->
+  <!-- MAIN VIEWPORT CONTENT -->
+  <!-- ========================================================================= -->
+  <main class="flex-1 overflow-y-auto p-4 md:p-8 space-y-7 relative">
+
+    <!-- TOP HEADER: PROJECT SELECTION & QUICK ACTIONS -->
+    <header class="blueprint-card p-4 md:p-5 rounded-2xl flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-card">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-desert-100 text-desert-700 border border-desert-300 uppercase tracking-wider">
+            <i class="fa-solid fa-building-wheat mr-1"></i> Active Construction Zone
+          </span>
+          <span class="text-xs font-mono text-site-muted">GPS: 19.0760° N, 72.8777° E</span>
+        </div>
+        <h2 id="tab-heading" class="text-2xl font-black text-site-dark tracking-tight mt-1">Construction Site Executive Overview</h2>
+        <p id="tab-subheading" class="text-xs md:text-sm text-site-slate">Autonomous Multi-Agent Residential Civil Engineering & Computer Vision Engine</p>
+      </div>
+
+      <div class="flex items-center flex-wrap gap-3">
+        <select id="project-selector" onchange="selectProject(this.value)" class="bg-white border-2 border-desert-300 text-site-dark rounded-xl px-3.5 py-2 text-xs md:text-sm font-semibold focus:outline-none focus:border-desert-500 shadow-sm">
+          <option value="BS-1001">BS-1001: Modern 2BHK Residential Villa</option>
+        </select>
+
+        <button onclick="runFullPipeline()" class="flex items-center gap-2 bg-gradient-to-r from-desert-500 to-desert-600 hover:from-desert-600 hover:to-desert-700 text-white text-xs md:text-sm font-bold px-4 py-2.5 rounded-xl shadow-desert hover:shadow-desert-lg transition active:scale-95">
+          <i class="fa-solid fa-bolt text-yellow-200"></i> Run All 5 Agents
+        </button>
+      </div>
+    </header>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 1: OVERVIEW — HERO BACKGROUND VIDEO & CONSTRUCTION SITE METRICS -->
+    <!-- ========================================================================= -->
+    <section id="tab-overview" class="tab-content space-y-7">
+
+      <!-- HERO VIDEO DISPLAY BANNER: Continuous Live Construction Site Stream -->
+      <div class="relative w-full rounded-2xl overflow-hidden shadow-desert-lg border-2 border-desert-300/80 bg-site-dark min-h-[380px] flex flex-col justify-between p-6 md:p-8">
+        <!-- Live Video Element running continuously -->
+        <video id="site-bg-video" autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+          <source src="/assets/site_construction.mp4" type="video/mp4">
+        </video>
+
+        <!-- Warm Desert Scrim & Architectural Scanlines -->
+        <div class="absolute inset-0 video-overlay-scrim construction-grid-mark"></div>
+
+        <!-- Video Top Overlay Pills -->
+        <div class="relative z-10 flex flex-wrap items-center justify-between gap-3">
+          <div class="flex items-center gap-2 bg-black/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-desert-500/40 text-white text-xs font-semibold">
+            <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+            <span class="font-mono text-desert-400 font-bold">CAM-01 [LIVE SITE STREAM]</span>
+            <span class="text-stone-300 hidden sm:inline">| RCC Frame & Tower Crane Deck</span>
+          </div>
+          <div class="flex items-center gap-2 bg-desert-500/90 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-bold shadow-sm">
+            <i class="fa-solid fa-tower-observation mr-1"></i> Site AI Monitoring Active
+          </div>
+        </div>
+
+        <!-- Video Bottom Stats Banner inspired by user's reference mockup -->
+        <div class="relative z-10 mt-20 pt-6 border-t border-white/20 flex flex-col lg:flex-row lg:items-end justify-between gap-6 text-white">
+          <div class="max-w-xl">
+            <span class="text-xs uppercase font-mono tracking-widest text-desert-400 font-bold">Integrated Construction Intelligence</span>
+            <h3 class="text-2xl md:text-3xl font-black tracking-tight text-white mt-1">Autonomous Site Planning, Real-Time BOQ & Vision Intelligence</h3>
+            <p class="text-xs md:text-sm text-stone-200 mt-1 leading-relaxed">
+              Monitoring active heavy machinery, structural RCC column fabrication, inventory staging, and automated worker PPE safety compliance.
+            </p>
+          </div>
+
+          <!-- Planned Progress Card (Inspired by user's reference mockup) -->
+          <div class="bg-black/75 backdrop-blur-md border border-desert-500/40 p-4 rounded-xl flex items-center gap-5 shadow-lg">
+            <div>
+              <p class="text-[10px] text-desert-400 font-mono uppercase tracking-wider">Planned Progress</p>
+              <p class="text-2xl font-black text-white">346 <span class="text-xs font-normal text-stone-300">Days</span></p>
+            </div>
+            <div class="h-8 w-px bg-stone-700"></div>
+            <div>
+              <p class="text-[10px] text-amber-400 font-mono uppercase tracking-wider">Schedule Slippage</p>
+              <p class="text-2xl font-black text-amber-400">0 <span class="text-xs font-normal text-stone-300">Days</span></p>
+            </div>
+            <div class="h-8 w-px bg-stone-700"></div>
+            <div>
+              <p class="text-[10px] text-emerald-400 font-mono uppercase tracking-wider">Site Health</p>
+              <p class="text-2xl font-black text-emerald-400">98.4%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KEY CIVIL ENGINEERING STATS TILES -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <!-- Tile 1 -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card relative overflow-hidden group">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-bold text-site-muted uppercase tracking-wider font-mono">Total Site Projects</p>
+            <div class="w-8 h-8 rounded-lg bg-desert-100 flex items-center justify-center text-desert-600">
+              <i class="fa-solid fa-cubes text-sm"></i>
+            </div>
+          </div>
+          <p id="ov-total-projects" class="text-3xl font-extrabold text-site-dark mt-2 font-mono">1</p>
+          <div class="mt-2 flex items-center text-xs text-desert-700 font-semibold gap-1">
+            <i class="fa-solid fa-circle-check text-emerald-500 text-[10px]"></i>
+            <span>Plotted Residential Tier</span>
+          </div>
+        </div>
+
+        <!-- Tile 2 -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card relative overflow-hidden group">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-bold text-site-muted uppercase tracking-wider font-mono">Estimated Turnkey Cost</p>
+            <div class="w-8 h-8 rounded-lg bg-desert-100 flex items-center justify-center text-desert-600">
+              <i class="fa-solid fa-indian-rupee-sign text-sm"></i>
+            </div>
+          </div>
+          <p id="ov-est-value" class="text-3xl font-extrabold text-desert-600 mt-2 font-mono">₹34.8 Lakh</p>
+          <div class="mt-2 flex items-center text-xs text-site-slate font-medium gap-1">
+            <span class="text-desert-700 font-bold font-mono">IS 1200</span>
+            <span>Standard Verified BOQ</span>
+          </div>
+        </div>
+
+        <!-- Tile 3 -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card relative overflow-hidden group">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-bold text-site-muted uppercase tracking-wider font-mono">CPM Baseline Target</p>
+            <div class="w-8 h-8 rounded-lg bg-desert-100 flex items-center justify-center text-desert-600">
+              <i class="fa-solid fa-timeline text-sm"></i>
+            </div>
+          </div>
+          <p id="ov-schedule-days" class="text-3xl font-extrabold text-site-dark mt-2 font-mono">148 Days</p>
+          <div class="mt-2 flex items-center text-xs text-emerald-600 font-semibold gap-1">
+            <i class="fa-solid fa-arrow-trend-up text-[10px]"></i>
+            <span>Zero-Float Critical Path Locked</span>
+          </div>
+        </div>
+
+        <!-- Tile 4 -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card relative overflow-hidden group">
+          <div class="flex items-center justify-between">
+            <p class="text-xs font-bold text-site-muted uppercase tracking-wider font-mono">AI Safety & PPE Score</p>
+            <div class="w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600">
+              <i class="fa-solid fa-shield-halved text-sm"></i>
+            </div>
+          </div>
+          <p id="ov-ppe-score" class="text-3xl font-extrabold text-emerald-600 mt-2 font-mono">87.5%</p>
+          <div class="mt-2 flex items-center text-xs text-site-slate font-medium gap-1">
+            <i class="fa-solid fa-eye text-desert-600 text-[10px]"></i>
+            <span>Computer Vision Inspected</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURED CONSTRUCTION INTELLIGENCE STREAMS (WITH USER'S 3 PROVIDED IMAGES) -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-lg font-extrabold text-site-dark tracking-tight flex items-center gap-2">
+            <i class="fa-solid fa-layer-group text-desert-500"></i>
+            Integrated Construction Intelligence Pipeline
+          </h3>
+          <span class="text-xs font-mono text-desert-700 bg-desert-100 px-3 py-1 rounded-full font-bold border border-desert-200">
+            3 Synchronized Visual Disciplines
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Stream Card 1: Architectural Blueprint Drafting -->
+          <div class="blueprint-card rounded-2xl overflow-hidden shadow-card flex flex-col group cursor-pointer" onclick="switchTab('planning')">
+            <div class="h-48 overflow-hidden relative">
+              <img src="/assets/architectural_drafting.jpg" alt="Architectural Drafting Table" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-site-dark text-[10px] font-bold px-2.5 py-1 rounded-md border border-desert-300">
+                <i class="fa-solid fa-compass-drafting text-desert-600 mr-1"></i> Agent 1: Planning & Zoning
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-site-dark text-base mb-1">Architectural Drafting & Setbacks</h4>
+                <p class="text-xs text-site-slate leading-relaxed">
+                  Translates natural-language customer requirements and plot bylaws into dimensioned CAD zoning, front/rear setbacks, and permissible FSI ground coverage.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-site-border flex items-center justify-between text-xs font-semibold text-desert-600">
+                <span>Explore Drafting Engine</span>
+                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stream Card 2: Spatial 2D/3D CAD Modeling -->
+          <div class="blueprint-card rounded-2xl overflow-hidden shadow-card flex flex-col group cursor-pointer" onclick="switchTab('design')">
+            <div class="h-48 overflow-hidden relative">
+              <img src="/assets/ui_inspiration_plan.png" alt="Spatial CAD & Building Plan" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-site-dark text-[10px] font-bold px-2.5 py-1 rounded-md border border-desert-300">
+                <i class="fa-solid fa-cube text-desert-600 mr-1"></i> Agent 3: Spatial CAD & 3D
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-site-dark text-base mb-1">Interactive 2D & 3D Dollhouse Model</h4>
+                <p class="text-xs text-site-slate leading-relaxed">
+                  Generates vector SVG floor plans with room tags, doors, windows, and exports Wavefront OBJ meshes into an interactive WebGL Three.js viewport.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-site-border flex items-center justify-between text-xs font-semibold text-desert-600">
+                <span>Launch 3D Viewer</span>
+                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stream Card 3: Construction Materials & Procurement -->
+          <div class="blueprint-card rounded-2xl overflow-hidden shadow-card flex flex-col group cursor-pointer" onclick="switchTab('estimation')">
+            <div class="h-48 overflow-hidden relative">
+              <img src="/assets/construction_materials.jpg" alt="Construction Raw Materials Yard" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-site-dark text-[10px] font-bold px-2.5 py-1 rounded-md border border-desert-300">
+                <i class="fa-solid fa-calculator text-desert-600 mr-1"></i> Agent 2: BOQ & Materials
+              </div>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between">
+              <div>
+                <h4 class="font-bold text-site-dark text-base mb-1">IS 1200 BOQ & Material Staging</h4>
+                <p class="text-xs text-site-slate leading-relaxed">
+                  Estimates rebar steel, cement sacks, red clay bricks, M-sand, aggregate, and tiles with automated supplier lead-time shortages and PO creation.
+                </p>
+              </div>
+              <div class="mt-4 pt-3 border-t border-site-border flex items-center justify-between text-xs font-semibold text-desert-600">
+                <span>View Full BOQ & Rates</span>
+                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FIVE SPECIALIZED AGENTS STATUS ROW -->
+      <div class="blueprint-card p-6 rounded-2xl shadow-card">
+        <div class="flex items-center justify-between mb-4">
+          <h4 class="text-base font-bold text-site-dark flex items-center gap-2">
+            <i class="fa-solid fa-network-wired text-desert-500"></i>
+            Coordinated Multi-Agent Execution State
+          </h4>
+          <span class="text-xs text-site-muted font-mono">Central Orchestrator: Depth Limit 5</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
+          <div class="p-3.5 rounded-xl bg-desert-50/70 border border-desert-200">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-bold text-site-dark">Agent 1: Planning</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <p class="text-[11px] text-site-slate">BHK requirements & NBC setbacks validated.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-desert-50/70 border border-desert-200">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-bold text-site-dark">Agent 2: Estimation</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <p class="text-[11px] text-site-slate">IS 1200 BOQ and PDF Quotation generated.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-desert-50/70 border border-desert-200">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-bold text-site-dark">Agent 3: Design</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <p class="text-[11px] text-site-slate">2D Floor plan & 3D Three.js mesh active.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-desert-50/70 border border-desert-200">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-bold text-site-dark">Agent 4: Scheduling</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <p class="text-[11px] text-site-slate">NetworkX CPM timeline & critical tasks locked.</p>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-desert-50/70 border border-desert-200">
+            <div class="flex items-center justify-between mb-1.5">
+              <span class="text-xs font-bold text-site-dark">Agent 5: Monitoring</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <p class="text-[11px] text-site-slate">Worker tracking & PPE inspection online.</p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 2: PROJECTS VAULT -->
+    <!-- ========================================================================= -->
+    <section id="tab-projects" class="tab-content hidden space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold text-site-dark">Residential Construction Projects</h3>
+          <p class="text-xs text-site-slate">Central SQLite Project Vault with Multi-Agent Execution Logs</p>
+        </div>
+        <button onclick="toggleModal('modal-new-project')" class="bg-desert-500 hover:bg-desert-600 text-white font-bold text-xs md:text-sm px-4 py-2.5 rounded-xl shadow-desert transition">
+          <i class="fa-solid fa-plus mr-1"></i> New Project
+        </button>
+      </div>
+
+      <div class="blueprint-card rounded-2xl overflow-hidden shadow-card">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-site-dark">
+            <thead class="bg-desert-100 text-desert-900 text-xs uppercase font-bold font-mono">
+              <tr>
+                <th class="px-5 py-3.5">Project ID</th>
+                <th class="px-5 py-3.5">Project Name</th>
+                <th class="px-5 py-3.5">Client</th>
+                <th class="px-5 py-3.5">Plot Area</th>
+                <th class="px-5 py-3.5">Config</th>
+                <th class="px-5 py-3.5">Status</th>
+                <th class="px-5 py-3.5 text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="projects-table-body" class="divide-y divide-site-border">
+              <tr class="hover:bg-desert-50/60 transition">
+                <td class="px-5 py-4 font-mono font-bold text-desert-600">BS-1001</td>
+                <td class="px-5 py-4 font-semibold text-site-dark">Modern 2BHK Residential Villa</td>
+                <td class="px-5 py-4 text-site-slate">Mr. Rushikesh K.</td>
+                <td class="px-5 py-4 font-mono text-xs">1,200 sq.ft (40' x 30')</td>
+                <td class="px-5 py-4"><span class="px-2.5 py-1 rounded-md text-xs font-bold bg-desert-100 text-desert-700">2BHK</span></td>
+                <td class="px-5 py-4"><span class="px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-100 text-emerald-800">READY</span></td>
+                <td class="px-5 py-4 text-right">
+                  <button onclick="selectProject('BS-1001')" class="text-desert-600 hover:text-desert-700 font-bold text-xs hover:underline">View Dashboard</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 3: AI SITE PLANNING & DRAFTING (WITH USER'S ARCHITECTURAL IMAGE) -->
+    <!-- ========================================================================= -->
+    <section id="tab-planning" class="tab-content hidden space-y-6">
+      <!-- Hero Feature Banner: Architectural Blueprint Drafting Table -->
+      <div class="blueprint-card rounded-2xl overflow-hidden shadow-card grid grid-cols-1 lg:grid-cols-3">
+        <div class="h-64 lg:h-auto overflow-hidden relative">
+          <img src="/assets/architectural_drafting.jpg" alt="Blueprint Drafting Table" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+            <span class="text-white text-xs font-mono font-bold"><i class="fa-solid fa-pen-ruler mr-1.5"></i>Drafting Board to Municipal BIM</span>
+          </div>
+        </div>
+        <div class="p-6 lg:col-span-2 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-desert-100 text-desert-700 uppercase font-mono">Agent 1 Core Engine</span>
+              <span class="text-xs text-site-muted">IS 1200 & NBC (National Building Code)</span>
+            </div>
+            <h3 class="text-xl font-extrabold text-site-dark">AI Natural-Language Planning & Municipal Setbacks</h3>
+            <p class="text-xs text-site-slate mt-2 leading-relaxed">
+              Converts unstructured customer requests (e.g. <em>"Modern 2BHK on 1,200 sq ft with master bedroom, living room, open kitchen and parking"</em>) into structured CAD parameters, enforcing regional municipal setbacks (5' front, 3' rear/sides) and permissible ground coverage.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-site-border grid grid-cols-3 gap-3 text-center">
+            <div class="p-2.5 bg-desert-50 rounded-xl">
+              <p class="text-[10px] font-mono text-site-muted">PLOT AREA</p>
+              <p class="text-sm font-bold text-site-dark font-mono">1,200 sq.ft</p>
+            </div>
+            <div class="p-2.5 bg-desert-50 rounded-xl">
+              <p class="text-[10px] font-mono text-site-muted">MAX FOOTPRINT</p>
+              <p class="text-sm font-bold text-desert-600 font-mono">767.2 sq.ft</p>
+            </div>
+            <div class="p-2.5 bg-desert-50 rounded-xl">
+              <p class="text-[10px] font-mono text-site-muted">NBC BYLAWS</p>
+              <p class="text-sm font-bold text-emerald-600 font-mono">100% PASS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Planning Prompt & Re-plan Form -->
+      <div class="blueprint-card p-6 rounded-2xl shadow-card space-y-4">
+        <h4 class="text-base font-bold text-site-dark"><i class="fa-solid fa-wand-magic-sparkles text-desert-500 mr-2"></i>Run Natural-Language Site Planner</h4>
+        <div class="space-y-3">
+          <textarea id="planning-prompt-input" rows="3" class="w-full bg-white border border-desert-300 rounded-xl p-3 text-sm text-site-dark focus:outline-none focus:border-desert-500 shadow-sm" placeholder="e.g. 'I want a modern 2BHK residential villa on a 1,200 sq ft plot with two bedrooms, two bathrooms, living room, modular kitchen, dining space, balcony and car parking.'"></textarea>
+          <button onclick="runPlanningAgent()" class="bg-desert-500 hover:bg-desert-600 text-white font-bold text-xs md:text-sm px-5 py-2.5 rounded-xl shadow-desert transition">
+            <i class="fa-solid fa-play mr-1"></i> Extract Parameters & Compute Zoning
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 4: 2D & 3D SPATIAL CAD (WITH USER'S UI INSPIRATION MOCKUP) -->
+    <!-- ========================================================================= -->
+    <section id="tab-design" class="tab-content hidden space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-xl font-bold text-site-dark">Residential 2D Floor Plan & 3D WebGL Dollhouse View</h3>
+          <p class="text-xs text-site-slate">Deterministic geometry engine + Three.js architectural dollhouse preview</p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="approveDesign()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-sm transition">
+            <i class="fa-solid fa-check mr-1.5"></i> Customer Design Sign-off
+          </button>
+        </div>
+      </div>
+
+      <!-- CAD Viewports: 2D Blueprint & 3D WebGL Dollhouse -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- 2D Dimensioned Floor Plan (SVG) -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-sm font-bold text-site-dark flex items-center gap-1.5">
+              <i class="fa-solid fa-map text-desert-600"></i> 2D Dimensioned Floor Plan (Vector CAD SVG)
+            </h4>
+            <span class="text-xs px-2.5 py-0.5 rounded-md bg-desert-100 text-desert-800 font-mono font-bold">Scale 1:18</span>
+          </div>
+          <div id="svg-plan-container" class="w-full h-96 bg-site-paper rounded-xl overflow-hidden border border-site-border flex items-center justify-center p-2">
+            <p class="text-site-muted text-xs font-mono">Loading Architectural Vector Blueprint...</p>
+          </div>
+        </div>
+
+        <!-- Interactive 3D WebGL Model Viewer (Three.js) -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <h4 class="text-sm font-bold text-site-dark flex items-center gap-1.5">
+              <i class="fa-solid fa-cube text-desert-600"></i> Interactive 3D WebGL Dollhouse Viewer
+            </h4>
+            <span class="text-xs px-2.5 py-0.5 rounded-md bg-stone-100 text-site-slate font-mono text-[11px]">Orbit: Drag / Scroll Zoom</span>
+          </div>
+          <div id="threejs-canvas-container" class="w-full h-96 bg-stone-900 rounded-xl overflow-hidden border border-stone-800 relative">
+            <canvas id="threejs-canvas" class="w-full h-full"></canvas>
+            <div class="absolute bottom-2.5 right-2.5 bg-black/75 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] text-desert-300 font-mono">
+              3D Extruded Cutaway | Desert Sandstone Finish
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conversational Design Modification Chat -->
+      <div class="blueprint-card p-5 rounded-2xl shadow-card">
+        <h4 class="text-sm font-bold text-site-dark mb-2 flex items-center gap-2">
+          <i class="fa-solid fa-comments text-desert-500"></i> Conversational Design Modification
+        </h4>
+        <div class="flex gap-2">
+          <input id="revision-prompt-input" type="text" placeholder="e.g. 'Increase the master bedroom size by two feet' or 'Add an attached bathroom'" class="flex-1 bg-white border border-desert-300 rounded-xl px-4 py-2.5 text-xs md:text-sm text-site-dark focus:outline-none focus:border-desert-500 shadow-sm">
+          <button onclick="submitRevision()" class="bg-desert-500 hover:bg-desert-600 text-white font-bold text-xs md:text-sm px-5 py-2.5 rounded-xl shadow-desert transition">
+            Modify Layout
+          </button>
+        </div>
+        <p id="revision-status-msg" class="text-xs text-desert-700 mt-2 font-medium"></p>
+      </div>
+
+      <!-- Reference Showcase Card (User's UI Inspiration Image) -->
+      <div class="blueprint-card p-5 rounded-2xl shadow-card flex flex-col md:flex-row items-center gap-5 bg-gradient-to-r from-white via-desert-50 to-white">
+        <img src="/assets/ui_inspiration_plan.png" alt="CAD System Architecture" class="w-full md:w-64 h-36 object-cover rounded-xl border border-desert-300 shadow-sm">
+        <div>
+          <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-desert-100 text-desert-700 uppercase font-mono">Next-Gen Spatial Architecture</span>
+          <h4 class="text-base font-bold text-site-dark mt-1">Multi-Level Spatial Progression & Wireframe Inspection</h4>
+          <p class="text-xs text-site-slate mt-1 leading-relaxed">
+            Inspired by top-tier modern civil CAD platforms, BuildSmartAI provides level-by-level wireframe breakdown, furnishing overlays, and automated room sizing compliant with Indian National Building Code standards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 5: ESTIMATION & BOQ (WITH USER'S RAW MATERIALS YARD IMAGE) -->
+    <!-- ========================================================================= -->
+    <section id="tab-estimation" class="tab-content hidden space-y-6">
+      <!-- Section Header with Raw Materials Banner -->
+      <div class="blueprint-card rounded-2xl overflow-hidden shadow-card grid grid-cols-1 lg:grid-cols-3">
+        <div class="h-60 lg:h-auto overflow-hidden relative">
+          <img src="/assets/construction_materials.jpg" alt="Construction Raw Materials Yard" class="w-full h-full object-cover">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+            <span class="text-white text-xs font-mono font-bold"><i class="fa-solid fa-boxes-stacked mr-1"></i>Material Staging Yard & Supply Chain</span>
+          </div>
+        </div>
+        <div class="p-6 lg:col-span-2 flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-2">
+              <span class="px-2.5 py-0.5 rounded text-[10px] font-bold bg-desert-100 text-desert-700 uppercase font-mono">IS 1200 Civil Code Verified</span>
+              <div class="flex items-center gap-2">
+                <a id="btn-download-quotation" href="/api/projects/BS-1001/reports/quotation-pdf" target="_blank" class="bg-desert-500 hover:bg-desert-600 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-sm">
+                  <i class="fa-solid fa-file-pdf mr-1"></i> Quotation PDF
+                </a>
+                <a id="btn-download-boq" href="/api/projects/BS-1001/reports/boq-excel" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-3 py-1.5 rounded-lg shadow-sm">
+                  <i class="fa-solid fa-file-excel mr-1"></i> BOQ Excel
+                </a>
+                <button onclick="approveQuotation()" class="bg-site-dark hover:bg-black text-white font-bold text-xs px-3 py-1.5 rounded-lg">
+                  <i class="fa-solid fa-check mr-1"></i> Sign-off
+                </button>
+              </div>
+            </div>
+            <h3 class="text-xl font-extrabold text-site-dark">Deterministic Bill of Quantities & Material Rates</h3>
+            <p class="text-xs text-site-slate mt-2 leading-relaxed">
+              Calculates exact construction quantities (PPC Cement, TMT Steel Rebar, M-Sand, 20mm Aggregates, Red Bricks, Vitrified Tiles) using civil thumb-rules and local supplier price indexes.
+            </p>
+          </div>
+
+          <div class="mt-4 pt-4 border-t border-site-border grid grid-cols-3 gap-3">
+            <div class="p-3 bg-desert-50 rounded-xl">
+              <p class="text-[10px] font-mono text-site-muted uppercase">Materials Cost</p>
+              <p id="cost-materials" class="text-lg font-bold text-site-dark font-mono mt-0.5">₹14,92,400</p>
+            </div>
+            <div class="p-3 bg-desert-50 rounded-xl">
+              <p class="text-[10px] font-mono text-site-muted uppercase">Labour & Finishing</p>
+              <p id="cost-labour" class="text-lg font-bold text-desert-600 font-mono mt-0.5">₹4,37,000</p>
+            </div>
+            <div class="p-3 bg-desert-50 rounded-xl">
+              <p class="text-[10px] font-mono text-site-muted uppercase">Grand Turnkey</p>
+              <p id="cost-grand-total" class="text-lg font-bold text-emerald-600 font-mono mt-0.5">₹34,82,500</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOQ Items Table -->
+      <div class="blueprint-card rounded-2xl overflow-hidden shadow-card">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-site-dark">
+            <thead class="bg-desert-100 text-desert-900 text-xs uppercase font-bold font-mono">
+              <tr>
+                <th class="px-5 py-3.5">Code</th>
+                <th class="px-5 py-3.5">Material Description</th>
+                <th class="px-5 py-3.5">Calculated Qty</th>
+                <th class="px-5 py-3.5">Unit</th>
+                <th class="px-5 py-3.5">Unit Rate (INR)</th>
+                <th class="px-5 py-3.5 text-right">Total Amount</th>
+              </tr>
+            </thead>
+            <tbody id="boq-table-body" class="divide-y divide-site-border">
+              <!-- Dynamically injected from API -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 6: PROCUREMENT & SHORTAGE RECONCILIATION -->
+    <!-- ========================================================================= -->
+    <section id="tab-procurement" class="tab-content hidden space-y-6">
+      <div class="flex items-center justify-between">
+        <div>
+          <h3 class="text-xl font-bold text-site-dark">Site Procurement & Material Shortages</h3>
+          <p class="text-xs text-site-slate">Automated reconciliation between BOQ demand and warehouse inventory</p>
+        </div>
+        <span class="text-xs px-3 py-1 rounded-full bg-desert-100 text-desert-800 font-bold font-mono border border-desert-300">
+          Human Approval Required for PO
+        </span>
+      </div>
+
+      <div class="blueprint-card rounded-2xl overflow-hidden shadow-card">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-sm text-site-dark">
+            <thead class="bg-desert-100 text-desert-900 text-xs uppercase font-bold font-mono">
+              <tr>
+                <th class="px-5 py-3.5">Material Name</th>
+                <th class="px-5 py-3.5">Required</th>
+                <th class="px-5 py-3.5">Available Stock</th>
+                <th class="px-5 py-3.5">Shortage Qty</th>
+                <th class="px-5 py-3.5">Status</th>
+                <th class="px-5 py-3.5">Recommended Supplier</th>
+              </tr>
+            </thead>
+            <tbody id="procurement-table-body" class="divide-y divide-site-border">
+              <!-- Injected dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 7: CPM GANTT SCHEDULE -->
+    <!-- ========================================================================= -->
+    <section id="tab-schedule" class="tab-content hidden space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-xl font-bold text-site-dark">Critical Path Method (CPM) Construction Schedule</h3>
+          <p class="text-xs text-site-slate">NetworkX Directed Acyclic Graph with Zero-Float Milestones & Monsoon Advisory</p>
+        </div>
+        <span class="px-3.5 py-1.5 bg-desert-100 border border-desert-300 text-desert-800 text-xs font-mono font-bold rounded-xl">
+          Baseline Target: 148 Days
+        </span>
+      </div>
+
+      <div class="blueprint-card rounded-2xl p-6 shadow-card space-y-4">
+        <h4 class="text-sm font-bold text-site-dark flex items-center gap-2">
+          <i class="fa-solid fa-bars-progress text-desert-600"></i> Construction Gantt Sequence & Early/Late Dates
+        </h4>
+        <div id="gantt-container" class="space-y-2.5">
+          <!-- Dynamically injected Gantt bars -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 8: SITE INTELLIGENCE & COMPUTER VISION -->
+    <!-- ========================================================================= -->
+    <section id="tab-monitoring" class="tab-content hidden space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h3 class="text-xl font-bold text-site-dark">Site Vision Intelligence & Safety Inspection</h3>
+          <p class="text-xs text-site-slate">Personnel detection, PPE compliance evaluation, and schedule variance</p>
+        </div>
+        <a id="btn-download-sitereport" href="/api/projects/BS-1001/reports/site-pdf" target="_blank" class="bg-desert-500 hover:bg-desert-600 text-white font-bold text-xs px-4 py-2 rounded-xl shadow-desert transition">
+          <i class="fa-solid fa-file-pdf mr-1"></i> Daily Site Report PDF
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- Site Frame with Bounding Boxes -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card">
+          <h4 class="text-sm font-bold text-site-dark mb-2.5 flex items-center gap-1.5">
+            <i class="fa-solid fa-camera text-desert-600"></i> AI Annotated Site Inspection Frame
+          </h4>
+          <div class="w-full h-80 bg-site-paper rounded-xl overflow-hidden border border-site-border flex items-center justify-center relative">
+            <img id="site-annotated-img" src="/uploads/synthetic_site_annotated_annotated.jpg" onerror="this.src='/uploads/synthetic_site_annotated.jpg'" alt="Site Image Detection" class="w-full h-full object-cover">
+          </div>
+        </div>
+
+        <!-- Vision Analytics & Safety Alerts -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card flex flex-col justify-between">
+          <div>
+            <h4 class="text-sm font-bold text-site-dark mb-3 flex items-center gap-1.5">
+              <i class="fa-solid fa-shield-halved text-desert-600"></i> Vision Analytics & Safety Audit
+            </h4>
+            <div class="grid grid-cols-2 gap-3.5 mb-4">
+              <div class="p-3.5 bg-desert-50 rounded-xl border border-desert-200">
+                <p class="text-[11px] text-site-muted font-mono uppercase">Personnel Present</p>
+                <p id="site-worker-count" class="text-2xl font-black text-site-dark font-mono">4 Active</p>
+              </div>
+              <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200">
+                <p class="text-[11px] text-emerald-700 font-mono uppercase">PPE Compliance</p>
+                <p id="site-ppe-rate" class="text-2xl font-black text-emerald-600 font-mono">87.5%</p>
+              </div>
+            </div>
+
+            <h5 class="text-xs font-bold text-site-dark uppercase tracking-wider mb-2 font-mono">Safety Officer Action Alerts</h5>
+            <div id="safety-alerts-list" class="space-y-2 text-xs">
+              <div class="p-3 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 flex items-start gap-2">
+                <i class="fa-solid fa-triangle-exclamation text-amber-600 mt-0.5"></i>
+                <div>
+                  <p class="font-bold">Scaffold Safety Tie-Off Advisory</p>
+                  <p class="text-[11px] text-amber-800">Periodic harness inspection recommended on first floor elevation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-desert-100 border border-desert-300 mt-4 flex items-center justify-between text-xs font-semibold">
+            <span class="text-site-dark font-mono">Schedule Health Status:</span>
+            <span id="site-schedule-health" class="text-emerald-700 font-bold font-mono">ON TRACK (0 Days Variance)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- TAB 9: REPORTS & DOCUMENT EXPORTS -->
+    <!-- ========================================================================= -->
+    <section id="tab-reports" class="tab-content hidden space-y-6">
+      <h3 class="text-xl font-bold text-site-dark">Generated Engineering Reports & Documents</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Card 1 -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center text-rose-500 text-2xl">
+              <i class="fa-solid fa-file-pdf"></i>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-site-dark">Commercial Quotation PDF</p>
+              <p class="text-xs text-site-slate">Client quotation with itemized BOQ & payment milestones</p>
+            </div>
+          </div>
+          <a href="/api/projects/BS-1001/reports/quotation-pdf" target="_blank" class="px-3.5 py-2 bg-desert-500 hover:bg-desert-600 text-white text-xs font-bold rounded-xl shadow-desert transition">
+            Download
+          </a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 flex items-center justify-center text-emerald-600 text-2xl">
+              <i class="fa-solid fa-file-excel"></i>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-site-dark">Detailed Bill of Quantities (BOQ)</p>
+              <p class="text-xs text-site-slate">Excel spreadsheet with measurement formulas & material quantities</p>
+            </div>
+          </div>
+          <a href="/api/projects/BS-1001/reports/boq-excel" target="_blank" class="px-3.5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow-sm transition">
+            Download
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-blue-600 text-2xl">
+              <i class="fa-solid fa-file-pdf"></i>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-site-dark">Daily Site Intelligence Report</p>
+              <p class="text-xs text-site-slate">Workforce count, PPE inspection scores, and CPM delay analysis</p>
+            </div>
+          </div>
+          <a href="/api/projects/BS-1001/reports/site-pdf" target="_blank" class="px-3.5 py-2 bg-site-dark hover:bg-black text-white text-xs font-bold rounded-xl shadow-sm transition">
+            Download
+          </a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="blueprint-card p-5 rounded-2xl shadow-card flex items-center justify-between">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-desert-600 text-2xl">
+              <i class="fa-solid fa-drafting-compass"></i>
+            </div>
+            <div>
+              <p class="font-bold text-sm text-site-dark">2D Dimensioned Blueprint (SVG)</p>
+              <p class="text-xs text-site-slate">Vector architectural drawing with setbacks, doors, and legend</p>
+            </div>
+          </div>
+          <a href="/api/projects/BS-1001/reports/floorplan-svg" target="_blank" class="px-3.5 py-2 bg-desert-100 hover:bg-desert-200 text-desert-800 border border-desert-300 text-xs font-bold rounded-xl transition">
+            Download
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT APP LOGIC & THREE.JS 3D SCENE (WHITE & DESERT YELLOW THEME) -->
+  <!-- ========================================================================= -->
+  <script>
+    let currentProjectId = "BS-1001";
+    let threeScene, threeCamera, threeRenderer, threeControls;
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.nav-btn').forEach(el => {
+        el.classList.remove('text-white', 'bg-desert-500', 'shadow-desert');
+        el.classList.add('text-site-slate');
+      });
+
+      const target = document.getElementById(`tab-${tabId}`);
+      const btn = document.getElementById(`nav-${tabId}`);
+      if (target) target.classList.remove('hidden');
+      if (btn) {
+        btn.classList.add('text-white', 'bg-desert-500', 'shadow-desert');
+        btn.classList.remove('text-site-slate');
+      }
+
+      if (tabId === 'design') {
+        setTimeout(initThreeScene, 100);
+      }
+      if (tabId === 'procurement') {
+        loadProcurementData(currentProjectId);
+      }
+      if (tabId === 'schedule') {
+        loadScheduleData(currentProjectId);
+      }
+    }
+
+    function toggleAmbientVideo() {
+      const vid = document.getElementById('site-bg-video');
+      const icon = document.getElementById('video-toggle-icon');
+      const text = document.getElementById('video-toggle-text');
+      if (!vid) return;
+
+      if (vid.paused) {
+        vid.play();
+        icon.className = 'fa-solid fa-pause';
+        text.innerText = 'Pause';
+      } else {
+        vid.pause();
+        icon.className = 'fa-solid fa-play';
+        text.innerText = 'Play';
+      }
+    }
+
+    async function loadProjectData(pid) {
+      currentProjectId = pid;
+      document.getElementById('active-project-pill').innerText = pid;
+
+      try {
+        const res = await fetch(`/api/projects/${pid}`);
+        const data = await res.json();
+
+        // Update BOQ Table
+        if (data.latest_quotation) {
+          const tbody = document.getElementById('boq-table-body');
+          tbody.innerHTML = '';
+          data.latest_quotation.forEach(it => {
+            const tr = document.createElement('tr');
+            tr.className = "hover:bg-desert-50/60 transition";
+            tr.innerHTML = `
+              <td class="px-5 py-3 font-mono text-xs font-bold text-desert-700">${it.item_code}</td>
+              <td class="px-5 py-3 font-medium text-site-dark">${it.name}</td>
+              <td class="px-5 py-3 font-mono">${it.quantity.toLocaleString()}</td>
+              <td class="px-5 py-3 text-site-muted font-mono text-xs">${it.unit}</td>
+              <td class="px-5 py-3 font-mono">₹${it.unit_rate.toFixed(2)}</td>
+              <td class="px-5 py-3 font-mono font-bold text-right text-desert-700">₹${it.total_amount.toLocaleString()}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+        }
+
+        // Update SVG Plan
+        const svgRes = await fetch(`/api/projects/${pid}/reports/floorplan-svg`);
+        if (svgRes.ok) {
+          const svgText = await svgRes.text();
+          document.getElementById('svg-plan-container').innerHTML = svgText;
+        }
+
+      } catch (e) {
+        console.error("Failed to load project details:", e);
+      }
+    }
+
+    async function runFullPipeline() {
+      const btn = event.currentTarget;
+      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Executing Agents...';
+      try {
+        const res = await fetch(`/api/projects/${currentProjectId}/orchestrate-all`, { method: 'POST' });
+        const result = await res.json();
+        alert(`Orchestration finished! Status: ${result.status}`);
+        loadProjectData(currentProjectId);
+      } catch (err) {
+        alert("Pipeline error: " + err);
+      } finally {
+        btn.innerHTML = '<i class="fa-solid fa-bolt text-yellow-200"></i> Run All 5 Agents';
+      }
+    }
+
+    async function submitRevision() {
+      const input = document.getElementById('revision-prompt-input');
+      const val = input.value.trim();
+      if (!val) return;
+
+      document.getElementById('revision-status-msg').innerText = "Applying geometric modification...";
+      try {
+        const res = await fetch(`/api/projects/${currentProjectId}/design/revise`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ revision_prompt: val })
+        });
+        const data = await res.json();
+        document.getElementById('revision-status-msg').innerText = `Revision v${data.result.version} applied: ${data.result.revision_notes.join(', ')}`;
+        loadProjectData(currentProjectId);
+        if (threeScene) updateThreeMesh(data.result.rooms);
+      } catch (e) {
+        document.getElementById('revision-status-msg').innerText = "Error: " + e;
+      }
+    }
+
+    async function approveDesign() {
+      const res = await fetch(`/api/projects/${currentProjectId}/design/approve`, { method: 'POST' });
+      const data = await res.json();
+      alert(data.message);
+    }
+
+    async function approveQuotation() {
+      const res = await fetch(`/api/projects/${currentProjectId}/quotation/approve`, { method: 'POST' });
+      const data = await res.json();
+      alert(data.message);
+    }
+
+    async function runPlanningAgent() {
+      const promptInput = document.getElementById('planning-prompt-input');
+      const text = promptInput ? promptInput.value.trim() : "";
+      try {
+        const res = await fetch(`/api/projects/${currentProjectId}/plan`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ raw_requirements: text || undefined })
+        });
+        const data = await res.json();
+        alert(`Planning Complete! Config: ${data.result.bhk_configuration}, Rooms: ${data.result.rooms.length}`);
+        loadProjectData(currentProjectId);
+      } catch (e) {
+        alert("Planning error: " + e);
+      }
+    }
+
+    // 3D WebGL Three.js Scene Setup (White & Desert Yellow Palette)
+    function initThreeScene() {
+      const container = document.getElementById('threejs-canvas-container');
+      if (!container || threeRenderer) return;
+
+      const width = container.clientWidth;
+      const height = container.clientHeight;
+
+      threeScene = new THREE.Scene();
+      // Desert Alabaster/Slate Scene Background
+      threeScene.background = new THREE.Color(0x1C212D);
+
+      threeCamera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+      threeCamera.position.set(30, 45, 55);
+
+      threeRenderer = new THREE.WebGLRenderer({ canvas: document.getElementById('threejs-canvas'), antialias: true });
+      threeRenderer.setSize(width, height);
+
+      threeControls = new THREE.OrbitControls(threeCamera, threeRenderer.domElement);
+      threeControls.enableDamping = true;
+      threeControls.dampingFactor = 0.05;
+      threeControls.target.set(15, 0, 15);
+
+      // Warm Lighting setup
+      const ambientLight = new THREE.AmbientLight(0xfff5e6, 0.85); // warm light
+      threeScene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0xffeedd, 0.9);
+      dirLight.position.set(25, 45, 25);
+      threeScene.add(dirLight);
+
+      // Construction Grid Ground Helper (Desert Ochre lines)
+      const gridHelper = new THREE.GridHelper(50, 25, 0xD4A853, 0x3A4454);
+      threeScene.add(gridHelper);
+
+      // Build default 3D residential geometry
+      const defaultRooms = [
+        {name: "Living Room", x: 3, y: 5, w: 16, h: 14},
+        {name: "Kitchen", x: 19, y: 5, w: 10, h: 14},
+        {name: "Master Bedroom", x: 3, y: 19, w: 14, h: 12},
+        {name: "Bedroom 2", x: 17, y: 19, w: 12, h: 12},
+        {name: "Bathroom", x: 3, y: 31, w: 6, h: 8}
+      ];
+      updateThreeMesh(defaultRooms);
+
+      function animate() {
+        requestAnimationFrame(animate);
+        threeControls.update();
+        threeRenderer.render(threeScene, threeCamera);
+      }
+      animate();
+    }
+
+    function updateThreeMesh(rooms) {
+      if (!threeScene) return;
+
+      // Remove existing room meshes
+      for (let i = threeScene.children.length - 1; i >= 0; i--) {
+        const obj = threeScene.children[i];
+        if (obj.userData && obj.userData.isRoomMesh) {
+          threeScene.remove(obj);
+        }
+      }
+
+      // Desert Yellow Wall Material & Clean Sand Floor Material
+      const wallMat = new THREE.MeshStandardMaterial({
+        color: 0xD4A853, // Warm Desert Gold
+        roughness: 0.5,
+        metalness: 0.1
+      });
+      const floorMat = new THREE.MeshStandardMaterial({
+        color: 0x2A3242, // Clean CAD Charcoal Floor
+        roughness: 0.4
+      });
+
+      rooms.forEach(r => {
+        // Floor Plane
+        const floorGeo = new THREE.PlaneGeometry(r.w, r.h);
+        const floorMesh = new THREE.Mesh(floorGeo, floorMat);
+        floorMesh.rotation.x = -Math.PI / 2;
+        floorMesh.position.set(r.x + (r.w / 2), 0.05, r.y + (r.h / 2));
+        floorMesh.userData = { isRoomMesh: true };
+        threeScene.add(floorMesh);
+
+        // Extruded Walls Box (Cutaway Dollhouse view: height 6ft)
+        const wallH = 6.0;
+        const wallBoxGeo = new THREE.BoxGeometry(r.w, wallH, r.h);
+        const edges = new THREE.EdgesGeometry(wallBoxGeo);
+        const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0xFDFBF7 }));
+        line.position.set(r.x + (r.w / 2), wallH / 2, r.y + (r.h / 2));
+        line.userData = { isRoomMesh: true };
+        threeScene.add(line);
+      });
+    }
+
+    async function loadProcurementData(pid) {
+      try {
+        const res = await fetch(`/api/projects/${pid}/procurement`);
+        if (!res.ok) return;
+        const data = await res.json();
+        const tbody = document.getElementById('procurement-table-body');
+        if (!tbody) return;
+        tbody.innerHTML = '';
+        const items = data.shortages || [];
+        if (items.length === 0) {
+          tbody.innerHTML = `<tr><td colspan="6" class="px-5 py-6 text-center text-site-muted italic text-sm">No shortages detected — warehouse stock is sufficient for current BOQ.</td></tr>`;
+          return;
+        }
+        items.forEach(item => {
+          const statusColor = item.shortage_quantity > 0 ? 'text-rose-600 bg-rose-50' : 'text-emerald-700 bg-emerald-50';
+          const statusLabel = item.shortage_quantity > 0 ? 'Shortage Alert' : 'Sufficient';
+          const tr = document.createElement('tr');
+          tr.className = "hover:bg-desert-50/60 transition";
+          tr.innerHTML = `
+            <td class="px-5 py-3.5 font-semibold text-site-dark">${item.material}</td>
+            <td class="px-5 py-3.5 font-mono">${item.required_quantity.toLocaleString()} ${item.unit}</td>
+            <td class="px-5 py-3.5 font-mono text-site-slate">${item.available_in_stock.toLocaleString()} ${item.unit}</td>
+            <td class="px-5 py-3.5 font-mono font-bold text-desert-700">${item.shortage_quantity.toLocaleString()} ${item.unit}</td>
+            <td class="px-5 py-3.5"><span class="px-2 py-0.5 rounded text-xs font-bold ${statusColor}">${statusLabel}</span></td>
+            <td class="px-5 py-3.5 text-xs text-site-slate">${item.recommended_supplier} <span class="text-desert-700 font-mono">(${item.lead_time_days}d lead)</span></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (e) {
+        console.error('Procurement load error:', e);
+      }
+    }
+
+    async function loadScheduleData(pid) {
+      try {
+        const res = await fetch(`/api/projects/${pid}/schedule`);
+        if (!res.ok) return;
+        const data = await res.json();
+        const container = document.getElementById('gantt-container');
+        if (!container) return;
+        const tasks = data.result?.tasks || data.tasks || [];
+        if (tasks.length === 0) {
+          container.innerHTML = `<p class="text-site-muted italic text-sm py-4">No schedule generated yet. Run the Scheduling Agent first.</p>`;
+          return;
+        }
+        const maxEnd = Math.max(...tasks.map(t => t.early_finish || t.duration || 0), 1);
+        container.innerHTML = '';
+        tasks.forEach(task => {
+          const start = task.early_start || 0;
+          const end = task.early_finish || (start + (task.duration || 1));
+          const left = ((start / maxEnd) * 100).toFixed(1);
+          const width = Math.max(2, (((end - start) / maxEnd) * 100)).toFixed(1);
+          const isCritical = task.is_critical || task.total_float === 0;
+          const barColor = isCritical ? 'bg-gradient-to-r from-desert-500 to-desert-600 text-white' : 'bg-desert-200 text-desert-900';
+          const div = document.createElement('div');
+          div.className = "flex items-center gap-3 text-xs";
+          div.innerHTML = `
+            <span class="w-56 text-right font-medium text-site-dark truncate pr-2 flex-shrink-0" title="${task.name}">${task.task_id || ''} ${task.name}</span>
+            <div class="flex-1 relative h-6 bg-desert-100 rounded-lg overflow-hidden border border-desert-200">
+              <div class="${barColor} h-full rounded-md absolute flex items-center px-2 font-bold font-mono text-[10px] overflow-hidden whitespace-nowrap shadow-sm"
+                   style="left:${left}%;width:${width}%;min-width:6px;" title="${task.name}: Day ${start} – ${end}">
+                ${width > 6 ? `${task.duration}d` : ''}
+              </div>
+            </div>
+            <span class="w-28 flex-shrink-0 font-mono text-[11px] ${isCritical ? 'text-desert-700 font-bold' : 'text-site-muted'}">
+              ${isCritical ? '🔴 Critical Path' : `Float: ${task.total_float ?? '-'}d`}
+            </span>
+          `;
+          container.appendChild(div);
+        });
+      } catch (e) {
+        console.error('Schedule load error:', e);
+      }
+    }
+
+    window.onload = () => {
+      loadProjectData(currentProjectId);
+    };
+  </script>
+</body>
+</html>

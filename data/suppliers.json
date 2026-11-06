@@ -1,0 +1,54 @@
+{
+  "suppliers": [
+    {
+      "supplier_id": "SUP-001",
+      "name": "UltraTech Building Solutions Ltd.",
+      "category": "Cement & Ready-Mix",
+      "contact_person": "V. Sharma (Regional Sales Head)",
+      "phone": "+91 98201 44521",
+      "rating": 4.8,
+      "verified_lead_time_days": 2,
+      "credit_terms": "Net 30 days"
+    },
+    {
+      "supplier_id": "SUP-002",
+      "name": "Tata Tiscon Authorized Distributors",
+      "category": "Reinforcement Steel TMT",
+      "contact_person": "R. K. Mehra",
+      "phone": "+91 98112 55890",
+      "rating": 4.9,
+      "verified_lead_time_days": 3,
+      "credit_terms": "Advance 20%, Net 15 days"
+    },
+    {
+      "supplier_id": "SUP-003",
+      "name": "Apex Quarry & Sand Aggregates",
+      "category": "M-Sand & Coarse Aggregates",
+      "contact_person": "M. Patel",
+      "phone": "+91 97234 11209",
+      "rating": 4.6,
+      "verified_lead_time_days": 1,
+      "credit_terms": "Cash on Delivery"
+    },
+    {
+      "supplier_id": "SUP-004",
+      "name": "Vanguard Kilns & Clay Works",
+      "category": "Red Clay Bricks & AAC Blocks",
+      "contact_person": "S. Gupta",
+      "phone": "+91 94150 78234",
+      "rating": 4.5,
+      "verified_lead_time_days": 4,
+      "credit_terms": "Net 15 days"
+    },
+    {
+      "supplier_id": "SUP-005",
+      "name": "Kajaria Ceramics Depot",
+      "category": "Vitrified Floor & Wall Tiles",
+      "contact_person": "A. Singhal",
+      "phone": "+91 98450 66712",
+      "rating": 4.7,
+      "verified_lead_time_days": 5,
+      "credit_terms": "Net 30 days"
+    }
+  ]
+}

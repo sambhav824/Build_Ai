@@ -1,0 +1,125 @@
+{
+  "inventory": [
+    {
+      "id": "MAT-CEM-01",
+      "material_name": "Cement (Grade 53 OPC / PPC)",
+      "category": "Structural Materials",
+      "unit": "bags",
+      "available_qty": 120.0,
+      "minimum_stock": 50.0,
+      "unit_cost": 385.0,
+      "supplier_name": "UltraTech Building Solutions Ltd.",
+      "lead_time_days": 2
+    },
+    {
+      "id": "MAT-STL-01",
+      "material_name": "Reinforcement Steel (Fe 500D TMT)",
+      "category": "Structural Materials",
+      "unit": "kg",
+      "available_qty": 800.0,
+      "minimum_stock": 300.0,
+      "unit_cost": 72.5,
+      "supplier_name": "Tata Tiscon Authorized Distributors",
+      "lead_time_days": 3
+    },
+    {
+      "id": "MAT-SND-01",
+      "material_name": "Manufactured Sand (M-Sand / River Sand)",
+      "category": "Aggregates & Sands",
+      "unit": "cft",
+      "available_qty": 400.0,
+      "minimum_stock": 200.0,
+      "unit_cost": 55.0,
+      "supplier_name": "Apex Quarry Aggregates",
+      "lead_time_days": 1
+    },
+    {
+      "id": "MAT-AGG-01",
+      "material_name": "Coarse Aggregate (20mm Blue Metal)",
+      "category": "Aggregates & Sands",
+      "unit": "cft",
+      "available_qty": 350.0,
+      "minimum_stock": 150.0,
+      "unit_cost": 46.0,
+      "supplier_name": "Apex Quarry Aggregates",
+      "lead_time_days": 1
+    },
+    {
+      "id": "MAT-BRK-01",
+      "material_name": "First-Class Red Clay Bricks",
+      "category": "Masonry",
+      "unit": "nos",
+      "available_qty": 3000.0,
+      "minimum_stock": 1000.0,
+      "unit_cost": 9.2,
+      "supplier_name": "Vanguard Kilns & Clay Works",
+      "lead_time_days": 4
+    },
+    {
+      "id": "FIN-TIL-01",
+      "material_name": "Vitrified Floor Tiles (600x600mm Double Charged)",
+      "category": "Finishes",
+      "unit": "sq ft",
+      "available_qty": 150.0,
+      "minimum_stock": 50.0,
+      "unit_cost": 65.0,
+      "supplier_name": "Kajaria Ceramics Depot",
+      "lead_time_days": 5
+    },
+    {
+      "id": "FIN-PNT-01",
+      "material_name": "Acrylic Interior & Exterior Emulsion Paint",
+      "category": "Finishes",
+      "unit": "litres",
+      "available_qty": 30.0,
+      "minimum_stock": 20.0,
+      "unit_cost": 280.0,
+      "supplier_name": "Asian Paints Colour World",
+      "lead_time_days": 2
+    },
+    {
+      "id": "JON-DOR-01",
+      "material_name": "Flush Doors with Teak Wood Frames",
+      "category": "Joinery",
+      "unit": "sets",
+      "available_qty": 2.0,
+      "minimum_stock": 2.0,
+      "unit_cost": 7500.0,
+      "supplier_name": "CenturyPly Architectural Products",
+      "lead_time_days": 7
+    },
+    {
+      "id": "JON-WIN-01",
+      "material_name": "UPVC Sliding Windows with Mosquito Mesh",
+      "category": "Joinery",
+      "unit": "sets",
+      "available_qty": 0.0,
+      "minimum_stock": 2.0,
+      "unit_cost": 4800.0,
+      "supplier_name": "Fenesta Building Systems",
+      "lead_time_days": 10
+    },
+    {
+      "id": "MEP-PLM-01",
+      "material_name": "Plumbing & Sanitary Rough-in Pack (CPVC/PVC pipes & fittings)",
+      "category": "MEP Services",
+      "unit": "points",
+      "available_qty": 10.0,
+      "minimum_stock": 5.0,
+      "unit_cost": 850.0,
+      "supplier_name": "Astral Pipes & Fittings Co.",
+      "lead_time_days": 3
+    },
+    {
+      "id": "MEP-ELE-01",
+      "material_name": "Electrical Conduiting, Wiring & Modular Box Pack (FR Grade)",
+      "category": "MEP Services",
+      "unit": "points",
+      "available_qty": 15.0,
+      "minimum_stock": 10.0,
+      "unit_cost": 650.0,
+      "supplier_name": "Havells Commercial Distribution",
+      "lead_time_days": 2
+    }
+  ]
+}

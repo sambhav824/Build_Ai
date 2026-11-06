@@ -1,0 +1,42 @@
+{
+  "_note": "ILLUSTRATIVE / SAMPLE DATA — All figures are estimates for a 1,200 sq ft, 2BHK ground-floor residential construction in India. Actual costs vary by location, material grade, labour rates and market conditions.",
+  "project_id": "BS-1001",
+  "project_name": "Modern 2BHK Residential Villa",
+  "currency": "INR",
+  "as_of_date": "2026-11-05",
+  "summary": {
+    "material_cost": 1540000,
+    "labour_cost":    630000,
+    "equipment_cost":  95000,
+    "transport_cost":  55000,
+    "finishing_cost": 220000,
+    "contingency":    127000,
+    "taxes_gst":      218400,
+    "grand_total":   2885400
+  },
+  "category_breakdown": [
+    {"category": "Site Preparation & Excavation", "cost_inr": 85000,  "percent": 2.9},
+    {"category": "Foundation & Footings",          "cost_inr": 310000, "percent": 10.7},
+    {"category": "Structural RCC Work",            "cost_inr": 480000, "percent": 16.6},
+    {"category": "Masonry & Brickwork",            "cost_inr": 215000, "percent": 7.5},
+    {"category": "Plastering",                     "cost_inr": 125000, "percent": 4.3},
+    {"category": "Flooring & Wall Tiling",         "cost_inr": 195000, "percent": 6.8},
+    {"category": "Plumbing & Drainage",            "cost_inr": 165000, "percent": 5.7},
+    {"category": "Electrical Wiring & Fixtures",   "cost_inr": 145000, "percent": 5.0},
+    {"category": "Painting (Int + Ext)",           "cost_inr":  85000, "percent": 2.9},
+    {"category": "Doors & Windows",                "cost_inr": 175000, "percent": 6.1},
+    {"category": "Labour (All Trades)",            "cost_inr": 630000, "percent": 21.8},
+    {"category": "Contingency + GST",              "cost_inr": 275400, "percent": 9.5}
+  ],
+  "monthly_cash_flow": [
+    {"month": 1,  "label": "Month 1",  "planned_inr": 285000, "actual_inr": null, "task_ref": "T01, T02"},
+    {"month": 2,  "label": "Month 2",  "planned_inr": 410000, "actual_inr": null, "task_ref": "T03, T04"},
+    {"month": 3,  "label": "Month 3",  "planned_inr": 395000, "actual_inr": null, "task_ref": "T05, T06"},
+    {"month": 4,  "label": "Month 4",  "planned_inr": 480000, "actual_inr": null, "task_ref": "T06, T07"},
+    {"month": 5,  "label": "Month 5",  "planned_inr": 350000, "actual_inr": null, "task_ref": "T08"},
+    {"month": 6,  "label": "Month 6",  "planned_inr": 320000, "actual_inr": null, "task_ref": "T09, T10, T11"},
+    {"month": 7,  "label": "Month 7",  "planned_inr": 265000, "actual_inr": null, "task_ref": "T12"},
+    {"month": 8,  "label": "Month 8",  "planned_inr": 190000, "actual_inr": null, "task_ref": "T13"},
+    {"month": 9,  "label": "Month 9",  "planned_inr": 190400, "actual_inr": null, "task_ref": "T14 + Contingency"}
+  ]
+}

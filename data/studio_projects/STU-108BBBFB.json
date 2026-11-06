@@ -1,0 +1,5734 @@
+{
+  "project_id": "STU-108BBBFB",
+  "project_name": "Modern Residential Villa",
+  "source_filename": "GATES BU GURUNATH - GROUND FLOOR.pdf",
+  "source_format": "PDF",
+  "units": "meters",
+  "scale_factor": 1.0,
+  "scale_verified": true,
+  "pixel_scale_ratio": 100.0,
+  "building": {
+    "building_id": "bld_75e50b",
+    "name": "Modern Residential Villa",
+    "levels": [
+      {
+        "level_id": "lvl_1",
+        "name": "Ground Floor",
+        "elevation_m": 0.0,
+        "floor_to_floor_height_m": 5.0,
+        "default_wall_height_m": 5.0,
+        "slab_thickness_m": 0.15,
+        "is_visible": true,
+        "opacity": 1.0,
+        "walls": [
+          {
+            "wall_id": "WALL_001",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.06,
+              "y": 2.92
+            },
+            "end": {
+              "x": 13.31,
+              "y": 2.93
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_002",
+            "element_type": "WALL",
+            "start": {
+              "x": 13.3,
+              "y": 3.81
+            },
+            "end": {
+              "x": 4.05,
+              "y": 3.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_003",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.06,
+              "y": 3.79
+            },
+            "end": {
+              "x": 13.28,
+              "y": 3.8
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_004",
+            "element_type": "WALL",
+            "start": {
+              "x": 13.29,
+              "y": 2.95
+            },
+            "end": {
+              "x": 4.07,
+              "y": 2.94
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_005",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.51,
+              "y": 7.07
+            },
+            "end": {
+              "x": 11.31,
+              "y": 7.06
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_006",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.31,
+              "y": 7.06
+            },
+            "end": {
+              "x": 9.51,
+              "y": 7.07
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_007",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.49,
+              "y": 7.16
+            },
+            "end": {
+              "x": 11.32,
+              "y": 7.15
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_008",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.32,
+              "y": 7.15
+            },
+            "end": {
+              "x": 9.49,
+              "y": 7.16
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_009",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.49,
+              "y": 7.21
+            },
+            "end": {
+              "x": 11.32,
+              "y": 7.2
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_010",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.32,
+              "y": 7.2
+            },
+            "end": {
+              "x": 9.49,
+              "y": 7.21
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_011",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.99,
+              "y": 8.51
+            },
+            "end": {
+              "x": 6.82,
+              "y": 8.52
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_012",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.82,
+              "y": 8.52
+            },
+            "end": {
+              "x": 4.99,
+              "y": 8.51
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_013",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.99,
+              "y": 8.56
+            },
+            "end": {
+              "x": 6.82,
+              "y": 8.57
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_014",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.82,
+              "y": 8.57
+            },
+            "end": {
+              "x": 4.99,
+              "y": 8.56
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_015",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.28,
+              "y": 10.01
+            },
+            "end": {
+              "x": 12.28,
+              "y": 8.19
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_016",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.28,
+              "y": 8.19
+            },
+            "end": {
+              "x": 12.28,
+              "y": 10.01
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_017",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.19,
+              "y": 10.01
+            },
+            "end": {
+              "x": 12.2,
+              "y": 8.18
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_018",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.2,
+              "y": 8.18
+            },
+            "end": {
+              "x": 12.19,
+              "y": 10.01
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_019",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.15,
+              "y": 10.01
+            },
+            "end": {
+              "x": 12.15,
+              "y": 8.18
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_020",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.15,
+              "y": 8.18
+            },
+            "end": {
+              "x": 12.15,
+              "y": 10.01
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_021",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.62,
+              "y": 11.07
+            },
+            "end": {
+              "x": 10.71,
+              "y": 11.08
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_022",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.71,
+              "y": 11.08
+            },
+            "end": {
+              "x": 9.62,
+              "y": 11.07
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_023",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.41,
+              "y": 12.12
+            },
+            "end": {
+              "x": 4.42,
+              "y": 9.72
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_024",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.42,
+              "y": 9.72
+            },
+            "end": {
+              "x": 4.41,
+              "y": 12.12
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_025",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.55,
+              "y": 12.13
+            },
+            "end": {
+              "x": 4.56,
+              "y": 9.7
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_026",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.56,
+              "y": 9.7
+            },
+            "end": {
+              "x": 4.55,
+              "y": 12.13
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_027",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.5,
+              "y": 12.13
+            },
+            "end": {
+              "x": 4.51,
+              "y": 9.7
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_028",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.51,
+              "y": 9.7
+            },
+            "end": {
+              "x": 4.5,
+              "y": 12.13
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_029",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.72,
+              "y": 12.44
+            },
+            "end": {
+              "x": 8.73,
+              "y": 11.05
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_030",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.73,
+              "y": 11.05
+            },
+            "end": {
+              "x": 8.72,
+              "y": 12.44
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_031",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.58,
+              "y": 12.44
+            },
+            "end": {
+              "x": 8.57,
+              "y": 8.87
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_032",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.57,
+              "y": 8.87
+            },
+            "end": {
+              "x": 8.58,
+              "y": 12.44
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_033",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.78,
+              "y": 13.5
+            },
+            "end": {
+              "x": 9.79,
+              "y": 12.12
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_034",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.79,
+              "y": 12.12
+            },
+            "end": {
+              "x": 9.78,
+              "y": 13.5
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_035",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.41,
+              "y": 15.62
+            },
+            "end": {
+              "x": 3.42,
+              "y": 13.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_036",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.42,
+              "y": 13.79
+            },
+            "end": {
+              "x": 3.41,
+              "y": 15.62
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_037",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.37,
+              "y": 15.62
+            },
+            "end": {
+              "x": 3.37,
+              "y": 13.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_038",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.37,
+              "y": 13.79
+            },
+            "end": {
+              "x": 3.37,
+              "y": 15.62
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_039",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.29,
+              "y": 15.62
+            },
+            "end": {
+              "x": 3.29,
+              "y": 13.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_040",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.29,
+              "y": 13.79
+            },
+            "end": {
+              "x": 3.29,
+              "y": 15.62
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_041",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.52,
+              "y": 17.6
+            },
+            "end": {
+              "x": 3.28,
+              "y": 13.42
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_042",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.28,
+              "y": 13.42
+            },
+            "end": {
+              "x": 4.41,
+              "y": 12.81
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_043",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.41,
+              "y": 12.81
+            },
+            "end": {
+              "x": 3.27,
+              "y": 12.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_044",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.27,
+              "y": 12.79
+            },
+            "end": {
+              "x": 4.42,
+              "y": 12.29
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_045",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.42,
+              "y": 12.29
+            },
+            "end": {
+              "x": 4.43,
+              "y": 13.43
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_046",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.52,
+              "y": 13.65
+            },
+            "end": {
+              "x": 7.39,
+              "y": 13.65
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_047",
+            "element_type": "WALL",
+            "start": {
+              "x": 7.39,
+              "y": 13.65
+            },
+            "end": {
+              "x": 3.51,
+              "y": 13.67
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_048",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.51,
+              "y": 13.67
+            },
+            "end": {
+              "x": 3.51,
+              "y": 17.58
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_049",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.51,
+              "y": 17.58
+            },
+            "end": {
+              "x": 4.91,
+              "y": 17.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_050",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.91,
+              "y": 17.6
+            },
+            "end": {
+              "x": 3.52,
+              "y": 17.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_051",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.28,
+              "y": 17.8
+            },
+            "end": {
+              "x": 8.26,
+              "y": 16.23
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_052",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.26,
+              "y": 16.23
+            },
+            "end": {
+              "x": 8.13,
+              "y": 17.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_053",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.13,
+              "y": 17.6
+            },
+            "end": {
+              "x": 6.02,
+              "y": 17.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_054",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.02,
+              "y": 17.6
+            },
+            "end": {
+              "x": 8.11,
+              "y": 17.59
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_055",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.11,
+              "y": 17.59
+            },
+            "end": {
+              "x": 8.12,
+              "y": 16.24
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_056",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.12,
+              "y": 16.24
+            },
+            "end": {
+              "x": 5.86,
+              "y": 16.07
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_057",
+            "element_type": "WALL",
+            "start": {
+              "x": 5.86,
+              "y": 16.07
+            },
+            "end": {
+              "x": 8.05,
+              "y": 15.76
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_058",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.28,
+              "y": 15.75
+            },
+            "end": {
+              "x": 8.28,
+              "y": 17.8
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_059",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.83,
+              "y": 18.63
+            },
+            "end": {
+              "x": 11.84,
+              "y": 16.83
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_060",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.84,
+              "y": 16.83
+            },
+            "end": {
+              "x": 11.83,
+              "y": 18.63
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_061",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.74,
+              "y": 18.64
+            },
+            "end": {
+              "x": 11.75,
+              "y": 16.82
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_062",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.75,
+              "y": 16.82
+            },
+            "end": {
+              "x": 11.74,
+              "y": 18.64
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_063",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.69,
+              "y": 18.64
+            },
+            "end": {
+              "x": 11.7,
+              "y": 16.82
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_064",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.7,
+              "y": 16.82
+            },
+            "end": {
+              "x": 11.69,
+              "y": 18.64
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_065",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.04,
+              "y": 19.35
+            },
+            "end": {
+              "x": 10.86,
+              "y": 19.34
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_066",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.86,
+              "y": 19.34
+            },
+            "end": {
+              "x": 9.04,
+              "y": 19.35
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_067",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.04,
+              "y": 19.4
+            },
+            "end": {
+              "x": 10.86,
+              "y": 19.39
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_068",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.86,
+              "y": 19.39
+            },
+            "end": {
+              "x": 9.04,
+              "y": 19.4
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_069",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.04,
+              "y": 19.47
+            },
+            "end": {
+              "x": 10.86,
+              "y": 19.49
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_070",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.86,
+              "y": 19.49
+            },
+            "end": {
+              "x": 9.04,
+              "y": 19.47
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_071",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.29,
+              "y": 19.49
+            },
+            "end": {
+              "x": 12.74,
+              "y": 15.76
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_072",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.74,
+              "y": 15.76
+            },
+            "end": {
+              "x": 4.41,
+              "y": 6.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_073",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.41,
+              "y": 6.6
+            },
+            "end": {
+              "x": 12.31,
+              "y": 13.03
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_074",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.31,
+              "y": 13.03
+            },
+            "end": {
+              "x": 14.35,
+              "y": 7.05
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_075",
+            "element_type": "WALL",
+            "start": {
+              "x": 14.35,
+              "y": 7.05
+            },
+            "end": {
+              "x": 14.37,
+              "y": 19.48
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_076",
+            "element_type": "WALL",
+            "start": {
+              "x": 14.37,
+              "y": 19.48
+            },
+            "end": {
+              "x": 13.72,
+              "y": 7.07
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_077",
+            "element_type": "WALL",
+            "start": {
+              "x": 13.72,
+              "y": 7.07
+            },
+            "end": {
+              "x": 11.85,
+              "y": 19.48
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_078",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.85,
+              "y": 19.48
+            },
+            "end": {
+              "x": 3.29,
+              "y": 19.49
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_079",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.92,
+              "y": 6.09
+            },
+            "end": {
+              "x": 8.71,
+              "y": 6.1
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_080",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.72,
+              "y": 5.87
+            },
+            "end": {
+              "x": 6.93,
+              "y": 5.86
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_081",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.92,
+              "y": 6.35
+            },
+            "end": {
+              "x": 8.71,
+              "y": 6.36
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_082",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.72,
+              "y": 6.12
+            },
+            "end": {
+              "x": 6.93,
+              "y": 6.11
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_083",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.92,
+              "y": 6.6
+            },
+            "end": {
+              "x": 8.71,
+              "y": 6.61
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_084",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.72,
+              "y": 6.38
+            },
+            "end": {
+              "x": 6.93,
+              "y": 6.37
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_085",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.83,
+              "y": 14.7
+            },
+            "end": {
+              "x": 11.82,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_086",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.59,
+              "y": 13.67
+            },
+            "end": {
+              "x": 11.6,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_087",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.58,
+              "y": 14.7
+            },
+            "end": {
+              "x": 11.57,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_088",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.33,
+              "y": 13.67
+            },
+            "end": {
+              "x": 11.34,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_089",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.32,
+              "y": 14.7
+            },
+            "end": {
+              "x": 11.31,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_090",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.08,
+              "y": 13.67
+            },
+            "end": {
+              "x": 11.09,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_091",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.07,
+              "y": 14.7
+            },
+            "end": {
+              "x": 11.06,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_092",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.83,
+              "y": 13.67
+            },
+            "end": {
+              "x": 10.84,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_093",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.82,
+              "y": 14.7
+            },
+            "end": {
+              "x": 10.81,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_094",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.58,
+              "y": 13.67
+            },
+            "end": {
+              "x": 10.59,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_095",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.57,
+              "y": 14.7
+            },
+            "end": {
+              "x": 10.56,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_096",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.32,
+              "y": 13.67
+            },
+            "end": {
+              "x": 10.33,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_097",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.31,
+              "y": 14.7
+            },
+            "end": {
+              "x": 10.3,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_098",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.07,
+              "y": 13.67
+            },
+            "end": {
+              "x": 10.08,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_099",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.06,
+              "y": 14.7
+            },
+            "end": {
+              "x": 10.05,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_100",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.82,
+              "y": 13.67
+            },
+            "end": {
+              "x": 9.83,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_101",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.85,
+              "y": 16.0
+            },
+            "end": {
+              "x": 12.96,
+              "y": 15.99
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_102",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.96,
+              "y": 15.99
+            },
+            "end": {
+              "x": 12.95,
+              "y": 13.43
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_103",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.76,
+              "y": 13.65
+            },
+            "end": {
+              "x": 12.76,
+              "y": 15.77
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_104",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.89,
+              "y": 15.31
+            },
+            "end": {
+              "x": 12.89,
+              "y": 14.09
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_105",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.89,
+              "y": 14.09
+            },
+            "end": {
+              "x": 12.89,
+              "y": 15.31
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_106",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.82,
+              "y": 15.31
+            },
+            "end": {
+              "x": 12.83,
+              "y": 14.09
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_107",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.83,
+              "y": 14.09
+            },
+            "end": {
+              "x": 12.82,
+              "y": 15.31
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_108",
+            "element_type": "WALL",
+            "start": {
+              "x": 1.74,
+              "y": 19.49
+            },
+            "end": {
+              "x": 1.72,
+              "y": 8.47
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_109",
+            "element_type": "WALL",
+            "start": {
+              "x": 1.72,
+              "y": 8.47
+            },
+            "end": {
+              "x": 2.88,
+              "y": 8.42
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_110",
+            "element_type": "WALL",
+            "start": {
+              "x": 2.88,
+              "y": 8.42
+            },
+            "end": {
+              "x": 2.51,
+              "y": 19.47
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_111",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.06,
+              "y": 19.48
+            },
+            "end": {
+              "x": 1.74,
+              "y": 19.49
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_112",
+            "element_type": "WALL",
+            "start": {
+              "x": 2.51,
+              "y": 19.47
+            },
+            "end": {
+              "x": 2.5,
+              "y": 8.43
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_113",
+            "element_type": "WALL",
+            "start": {
+              "x": 1.73,
+              "y": 8.44
+            },
+            "end": {
+              "x": 1.74,
+              "y": 19.48
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_114",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.29,
+              "y": 20.31
+            },
+            "end": {
+              "x": 11.82,
+              "y": 20.31
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_115",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.85,
+              "y": 20.31
+            },
+            "end": {
+              "x": 3.27,
+              "y": 20.3
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          }
+        ],
+        "doors": [],
+        "windows": [],
+        "rooms": [
+          {
+            "room_id": "ROOM_001",
+            "element_type": "ROOM",
+            "name": "Room 1",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 4.05,
+                "y": 3.79
+              },
+              {
+                "x": 4.06,
+                "y": 2.92
+              },
+              {
+                "x": 13.31,
+                "y": 2.93
+              },
+              {
+                "x": 13.3,
+                "y": 3.81
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_002",
+            "element_type": "ROOM",
+            "name": "Room 2",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 4.06,
+                "y": 3.79
+              },
+              {
+                "x": 13.28,
+                "y": 3.8
+              },
+              {
+                "x": 13.29,
+                "y": 2.95
+              },
+              {
+                "x": 4.07,
+                "y": 2.94
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_003",
+            "element_type": "ROOM",
+            "name": "Room 3",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 3.29,
+                "y": 19.49
+              },
+              {
+                "x": 12.74,
+                "y": 15.76
+              },
+              {
+                "x": 4.41,
+                "y": 6.6
+              },
+              {
+                "x": 12.31,
+                "y": 13.03
+              },
+              {
+                "x": 14.35,
+                "y": 7.05
+              },
+              {
+                "x": 14.37,
+                "y": 19.48
+              },
+              {
+                "x": 13.72,
+                "y": 7.07
+              },
+              {
+                "x": 11.85,
+                "y": 19.48
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_004",
+            "element_type": "ROOM",
+            "name": "Room 4",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 1.74,
+                "y": 19.49
+              },
+              {
+                "x": 1.72,
+                "y": 8.47
+              },
+              {
+                "x": 2.88,
+                "y": 8.42
+              },
+              {
+                "x": 2.51,
+                "y": 19.47
+              },
+              {
+                "x": 3.06,
+                "y": 19.48
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_005",
+            "element_type": "ROOM",
+            "name": "Room 5",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 1.74,
+                "y": 19.48
+              },
+              {
+                "x": 2.51,
+                "y": 19.47
+              },
+              {
+                "x": 2.5,
+                "y": 8.43
+              },
+              {
+                "x": 1.73,
+                "y": 8.44
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          }
+        ],
+        "stairs": [],
+        "columns": [],
+        "slabs": [
+          {
+            "slab_id": "SLAB_L1_01",
+            "element_type": "SLAB",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 16.53,
+                "y": 0.0
+              },
+              {
+                "x": 16.53,
+                "y": 23.39
+              },
+              {
+                "x": 0.0,
+                "y": 23.39
+              }
+            ],
+            "thickness_m": 0.15,
+            "elevation_m": 0.0,
+            "material_id": "MAT-CONC-01",
+            "confidence": 1.0
+          }
+        ]
+      },
+      {
+        "level_id": "lvl_2",
+        "name": "Level 2",
+        "elevation_m": 5.0,
+        "floor_to_floor_height_m": 5.0,
+        "default_wall_height_m": 5.0,
+        "slab_thickness_m": 0.15,
+        "is_visible": true,
+        "opacity": 1.0,
+        "walls": [
+          {
+            "wall_id": "WALL_001",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.06,
+              "y": 2.92
+            },
+            "end": {
+              "x": 13.31,
+              "y": 2.93
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_002",
+            "element_type": "WALL",
+            "start": {
+              "x": 13.3,
+              "y": 3.81
+            },
+            "end": {
+              "x": 4.05,
+              "y": 3.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_003",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.06,
+              "y": 3.79
+            },
+            "end": {
+              "x": 13.28,
+              "y": 3.8
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_004",
+            "element_type": "WALL",
+            "start": {
+              "x": 13.29,
+              "y": 2.95
+            },
+            "end": {
+              "x": 4.07,
+              "y": 2.94
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_005",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.51,
+              "y": 7.07
+            },
+            "end": {
+              "x": 11.31,
+              "y": 7.06
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_006",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.31,
+              "y": 7.06
+            },
+            "end": {
+              "x": 9.51,
+              "y": 7.07
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_007",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.49,
+              "y": 7.16
+            },
+            "end": {
+              "x": 11.32,
+              "y": 7.15
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_008",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.32,
+              "y": 7.15
+            },
+            "end": {
+              "x": 9.49,
+              "y": 7.16
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_009",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.49,
+              "y": 7.21
+            },
+            "end": {
+              "x": 11.32,
+              "y": 7.2
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_010",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.32,
+              "y": 7.2
+            },
+            "end": {
+              "x": 9.49,
+              "y": 7.21
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_011",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.99,
+              "y": 8.51
+            },
+            "end": {
+              "x": 6.82,
+              "y": 8.52
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_012",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.82,
+              "y": 8.52
+            },
+            "end": {
+              "x": 4.99,
+              "y": 8.51
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_013",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.99,
+              "y": 8.56
+            },
+            "end": {
+              "x": 6.82,
+              "y": 8.57
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_014",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.82,
+              "y": 8.57
+            },
+            "end": {
+              "x": 4.99,
+              "y": 8.56
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_015",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.28,
+              "y": 10.01
+            },
+            "end": {
+              "x": 12.28,
+              "y": 8.19
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_016",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.28,
+              "y": 8.19
+            },
+            "end": {
+              "x": 12.28,
+              "y": 10.01
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_017",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.19,
+              "y": 10.01
+            },
+            "end": {
+              "x": 12.2,
+              "y": 8.18
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_018",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.2,
+              "y": 8.18
+            },
+            "end": {
+              "x": 12.19,
+              "y": 10.01
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_019",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.15,
+              "y": 10.01
+            },
+            "end": {
+              "x": 12.15,
+              "y": 8.18
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_020",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.15,
+              "y": 8.18
+            },
+            "end": {
+              "x": 12.15,
+              "y": 10.01
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_021",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.62,
+              "y": 11.07
+            },
+            "end": {
+              "x": 10.71,
+              "y": 11.08
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_022",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.71,
+              "y": 11.08
+            },
+            "end": {
+              "x": 9.62,
+              "y": 11.07
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_023",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.41,
+              "y": 12.12
+            },
+            "end": {
+              "x": 4.42,
+              "y": 9.72
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_024",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.42,
+              "y": 9.72
+            },
+            "end": {
+              "x": 4.41,
+              "y": 12.12
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_025",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.55,
+              "y": 12.13
+            },
+            "end": {
+              "x": 4.56,
+              "y": 9.7
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_026",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.56,
+              "y": 9.7
+            },
+            "end": {
+              "x": 4.55,
+              "y": 12.13
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_027",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.5,
+              "y": 12.13
+            },
+            "end": {
+              "x": 4.51,
+              "y": 9.7
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_028",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.51,
+              "y": 9.7
+            },
+            "end": {
+              "x": 4.5,
+              "y": 12.13
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_029",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.72,
+              "y": 12.44
+            },
+            "end": {
+              "x": 8.73,
+              "y": 11.05
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_030",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.73,
+              "y": 11.05
+            },
+            "end": {
+              "x": 8.72,
+              "y": 12.44
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_031",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.58,
+              "y": 12.44
+            },
+            "end": {
+              "x": 8.57,
+              "y": 8.87
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_032",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.57,
+              "y": 8.87
+            },
+            "end": {
+              "x": 8.58,
+              "y": 12.44
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_033",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.78,
+              "y": 13.5
+            },
+            "end": {
+              "x": 9.79,
+              "y": 12.12
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_034",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.79,
+              "y": 12.12
+            },
+            "end": {
+              "x": 9.78,
+              "y": 13.5
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_035",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.41,
+              "y": 15.62
+            },
+            "end": {
+              "x": 3.42,
+              "y": 13.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_036",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.42,
+              "y": 13.79
+            },
+            "end": {
+              "x": 3.41,
+              "y": 15.62
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_037",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.37,
+              "y": 15.62
+            },
+            "end": {
+              "x": 3.37,
+              "y": 13.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_038",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.37,
+              "y": 13.79
+            },
+            "end": {
+              "x": 3.37,
+              "y": 15.62
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_039",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.29,
+              "y": 15.62
+            },
+            "end": {
+              "x": 3.29,
+              "y": 13.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_040",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.29,
+              "y": 13.79
+            },
+            "end": {
+              "x": 3.29,
+              "y": 15.62
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_041",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.52,
+              "y": 17.6
+            },
+            "end": {
+              "x": 3.28,
+              "y": 13.42
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_042",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.28,
+              "y": 13.42
+            },
+            "end": {
+              "x": 4.41,
+              "y": 12.81
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_043",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.41,
+              "y": 12.81
+            },
+            "end": {
+              "x": 3.27,
+              "y": 12.79
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_044",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.27,
+              "y": 12.79
+            },
+            "end": {
+              "x": 4.42,
+              "y": 12.29
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_045",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.42,
+              "y": 12.29
+            },
+            "end": {
+              "x": 4.43,
+              "y": 13.43
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_046",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.52,
+              "y": 13.65
+            },
+            "end": {
+              "x": 7.39,
+              "y": 13.65
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_047",
+            "element_type": "WALL",
+            "start": {
+              "x": 7.39,
+              "y": 13.65
+            },
+            "end": {
+              "x": 3.51,
+              "y": 13.67
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_048",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.51,
+              "y": 13.67
+            },
+            "end": {
+              "x": 3.51,
+              "y": 17.58
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_049",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.51,
+              "y": 17.58
+            },
+            "end": {
+              "x": 4.91,
+              "y": 17.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_050",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.91,
+              "y": 17.6
+            },
+            "end": {
+              "x": 3.52,
+              "y": 17.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_051",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.28,
+              "y": 17.8
+            },
+            "end": {
+              "x": 8.26,
+              "y": 16.23
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_052",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.26,
+              "y": 16.23
+            },
+            "end": {
+              "x": 8.13,
+              "y": 17.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_053",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.13,
+              "y": 17.6
+            },
+            "end": {
+              "x": 6.02,
+              "y": 17.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_054",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.02,
+              "y": 17.6
+            },
+            "end": {
+              "x": 8.11,
+              "y": 17.59
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_055",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.11,
+              "y": 17.59
+            },
+            "end": {
+              "x": 8.12,
+              "y": 16.24
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_056",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.12,
+              "y": 16.24
+            },
+            "end": {
+              "x": 5.86,
+              "y": 16.07
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_057",
+            "element_type": "WALL",
+            "start": {
+              "x": 5.86,
+              "y": 16.07
+            },
+            "end": {
+              "x": 8.05,
+              "y": 15.76
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_058",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.28,
+              "y": 15.75
+            },
+            "end": {
+              "x": 8.28,
+              "y": 17.8
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_059",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.83,
+              "y": 18.63
+            },
+            "end": {
+              "x": 11.84,
+              "y": 16.83
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_060",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.84,
+              "y": 16.83
+            },
+            "end": {
+              "x": 11.83,
+              "y": 18.63
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_061",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.74,
+              "y": 18.64
+            },
+            "end": {
+              "x": 11.75,
+              "y": 16.82
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_062",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.75,
+              "y": 16.82
+            },
+            "end": {
+              "x": 11.74,
+              "y": 18.64
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_063",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.69,
+              "y": 18.64
+            },
+            "end": {
+              "x": 11.7,
+              "y": 16.82
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_064",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.7,
+              "y": 16.82
+            },
+            "end": {
+              "x": 11.69,
+              "y": 18.64
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_065",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.04,
+              "y": 19.35
+            },
+            "end": {
+              "x": 10.86,
+              "y": 19.34
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_066",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.86,
+              "y": 19.34
+            },
+            "end": {
+              "x": 9.04,
+              "y": 19.35
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_067",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.04,
+              "y": 19.4
+            },
+            "end": {
+              "x": 10.86,
+              "y": 19.39
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_068",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.86,
+              "y": 19.39
+            },
+            "end": {
+              "x": 9.04,
+              "y": 19.4
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_069",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.04,
+              "y": 19.47
+            },
+            "end": {
+              "x": 10.86,
+              "y": 19.49
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_070",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.86,
+              "y": 19.49
+            },
+            "end": {
+              "x": 9.04,
+              "y": 19.47
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_071",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.29,
+              "y": 19.49
+            },
+            "end": {
+              "x": 12.74,
+              "y": 15.76
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_072",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.74,
+              "y": 15.76
+            },
+            "end": {
+              "x": 4.41,
+              "y": 6.6
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_073",
+            "element_type": "WALL",
+            "start": {
+              "x": 4.41,
+              "y": 6.6
+            },
+            "end": {
+              "x": 12.31,
+              "y": 13.03
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_074",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.31,
+              "y": 13.03
+            },
+            "end": {
+              "x": 14.35,
+              "y": 7.05
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_075",
+            "element_type": "WALL",
+            "start": {
+              "x": 14.35,
+              "y": 7.05
+            },
+            "end": {
+              "x": 14.37,
+              "y": 19.48
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_076",
+            "element_type": "WALL",
+            "start": {
+              "x": 14.37,
+              "y": 19.48
+            },
+            "end": {
+              "x": 13.72,
+              "y": 7.07
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_077",
+            "element_type": "WALL",
+            "start": {
+              "x": 13.72,
+              "y": 7.07
+            },
+            "end": {
+              "x": 11.85,
+              "y": 19.48
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_078",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.85,
+              "y": 19.48
+            },
+            "end": {
+              "x": 3.29,
+              "y": 19.49
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_079",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.92,
+              "y": 6.09
+            },
+            "end": {
+              "x": 8.71,
+              "y": 6.1
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_080",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.72,
+              "y": 5.87
+            },
+            "end": {
+              "x": 6.93,
+              "y": 5.86
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_081",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.92,
+              "y": 6.35
+            },
+            "end": {
+              "x": 8.71,
+              "y": 6.36
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_082",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.72,
+              "y": 6.12
+            },
+            "end": {
+              "x": 6.93,
+              "y": 6.11
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_083",
+            "element_type": "WALL",
+            "start": {
+              "x": 6.92,
+              "y": 6.6
+            },
+            "end": {
+              "x": 8.71,
+              "y": 6.61
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_084",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.72,
+              "y": 6.38
+            },
+            "end": {
+              "x": 6.93,
+              "y": 6.37
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_085",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.83,
+              "y": 14.7
+            },
+            "end": {
+              "x": 11.82,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_086",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.59,
+              "y": 13.67
+            },
+            "end": {
+              "x": 11.6,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_087",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.58,
+              "y": 14.7
+            },
+            "end": {
+              "x": 11.57,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_088",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.33,
+              "y": 13.67
+            },
+            "end": {
+              "x": 11.34,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_089",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.32,
+              "y": 14.7
+            },
+            "end": {
+              "x": 11.31,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_090",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.08,
+              "y": 13.67
+            },
+            "end": {
+              "x": 11.09,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_091",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.07,
+              "y": 14.7
+            },
+            "end": {
+              "x": 11.06,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_092",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.83,
+              "y": 13.67
+            },
+            "end": {
+              "x": 10.84,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_093",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.82,
+              "y": 14.7
+            },
+            "end": {
+              "x": 10.81,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_094",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.58,
+              "y": 13.67
+            },
+            "end": {
+              "x": 10.59,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_095",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.57,
+              "y": 14.7
+            },
+            "end": {
+              "x": 10.56,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_096",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.32,
+              "y": 13.67
+            },
+            "end": {
+              "x": 10.33,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_097",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.31,
+              "y": 14.7
+            },
+            "end": {
+              "x": 10.3,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_098",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.07,
+              "y": 13.67
+            },
+            "end": {
+              "x": 10.08,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_099",
+            "element_type": "WALL",
+            "start": {
+              "x": 10.06,
+              "y": 14.7
+            },
+            "end": {
+              "x": 10.05,
+              "y": 13.66
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_100",
+            "element_type": "WALL",
+            "start": {
+              "x": 9.82,
+              "y": 13.67
+            },
+            "end": {
+              "x": 9.83,
+              "y": 14.71
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_101",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.85,
+              "y": 16.0
+            },
+            "end": {
+              "x": 12.96,
+              "y": 15.99
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_102",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.96,
+              "y": 15.99
+            },
+            "end": {
+              "x": 12.95,
+              "y": 13.43
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_103",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.76,
+              "y": 13.65
+            },
+            "end": {
+              "x": 12.76,
+              "y": 15.77
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_104",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.89,
+              "y": 15.31
+            },
+            "end": {
+              "x": 12.89,
+              "y": 14.09
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_105",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.89,
+              "y": 14.09
+            },
+            "end": {
+              "x": 12.89,
+              "y": 15.31
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_106",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.82,
+              "y": 15.31
+            },
+            "end": {
+              "x": 12.83,
+              "y": 14.09
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_107",
+            "element_type": "WALL",
+            "start": {
+              "x": 12.83,
+              "y": 14.09
+            },
+            "end": {
+              "x": 12.82,
+              "y": 15.31
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_108",
+            "element_type": "WALL",
+            "start": {
+              "x": 1.74,
+              "y": 19.49
+            },
+            "end": {
+              "x": 1.72,
+              "y": 8.47
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_109",
+            "element_type": "WALL",
+            "start": {
+              "x": 1.72,
+              "y": 8.47
+            },
+            "end": {
+              "x": 2.88,
+              "y": 8.42
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_110",
+            "element_type": "WALL",
+            "start": {
+              "x": 2.88,
+              "y": 8.42
+            },
+            "end": {
+              "x": 2.51,
+              "y": 19.47
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_111",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.06,
+              "y": 19.48
+            },
+            "end": {
+              "x": 1.74,
+              "y": 19.49
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "INTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_112",
+            "element_type": "WALL",
+            "start": {
+              "x": 2.51,
+              "y": 19.47
+            },
+            "end": {
+              "x": 2.5,
+              "y": 8.43
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_113",
+            "element_type": "WALL",
+            "start": {
+              "x": 1.73,
+              "y": 8.44
+            },
+            "end": {
+              "x": 1.74,
+              "y": 19.48
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_114",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.29,
+              "y": 20.31
+            },
+            "end": {
+              "x": 11.82,
+              "y": 20.31
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_115",
+            "element_type": "WALL",
+            "start": {
+              "x": 11.85,
+              "y": 20.31
+            },
+            "end": {
+              "x": 3.27,
+              "y": 20.3
+            },
+            "thickness_m": 0.23,
+            "height_m": 5.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.85,
+            "confidence_level": "HIGH",
+            "verified": false,
+            "source_layer": null,
+            "is_structural": true
+          }
+        ],
+        "doors": [],
+        "windows": [],
+        "rooms": [
+          {
+            "room_id": "ROOM_001",
+            "element_type": "ROOM",
+            "name": "Room 1",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 4.05,
+                "y": 3.79
+              },
+              {
+                "x": 4.06,
+                "y": 2.92
+              },
+              {
+                "x": 13.31,
+                "y": 2.93
+              },
+              {
+                "x": 13.3,
+                "y": 3.81
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_002",
+            "element_type": "ROOM",
+            "name": "Room 2",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 4.06,
+                "y": 3.79
+              },
+              {
+                "x": 13.28,
+                "y": 3.8
+              },
+              {
+                "x": 13.29,
+                "y": 2.95
+              },
+              {
+                "x": 4.07,
+                "y": 2.94
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_003",
+            "element_type": "ROOM",
+            "name": "Room 3",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 3.29,
+                "y": 19.49
+              },
+              {
+                "x": 12.74,
+                "y": 15.76
+              },
+              {
+                "x": 4.41,
+                "y": 6.6
+              },
+              {
+                "x": 12.31,
+                "y": 13.03
+              },
+              {
+                "x": 14.35,
+                "y": 7.05
+              },
+              {
+                "x": 14.37,
+                "y": 19.48
+              },
+              {
+                "x": 13.72,
+                "y": 7.07
+              },
+              {
+                "x": 11.85,
+                "y": 19.48
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_004",
+            "element_type": "ROOM",
+            "name": "Room 4",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 1.74,
+                "y": 19.49
+              },
+              {
+                "x": 1.72,
+                "y": 8.47
+              },
+              {
+                "x": 2.88,
+                "y": 8.42
+              },
+              {
+                "x": 2.51,
+                "y": 19.47
+              },
+              {
+                "x": 3.06,
+                "y": 19.48
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          },
+          {
+            "room_id": "ROOM_005",
+            "element_type": "ROOM",
+            "name": "Room 5",
+            "room_type": "GENERIC",
+            "boundary_polygon": [
+              {
+                "x": 1.74,
+                "y": 19.48
+              },
+              {
+                "x": 2.51,
+                "y": 19.47
+              },
+              {
+                "x": 2.5,
+                "y": 8.43
+              },
+              {
+                "x": 1.73,
+                "y": 8.44
+              }
+            ],
+            "floor_material_id": "MAT-TILE-01",
+            "ceiling_height_m": 3.0,
+            "confidence": 0.88,
+            "confidence_level": "HIGH",
+            "verified": false
+          }
+        ],
+        "stairs": [],
+        "columns": [],
+        "slabs": [
+          {
+            "slab_id": "SLAB_L2_01",
+            "element_type": "SLAB",
+            "boundary_polygon": [
+              {
+                "x": 0.0,
+                "y": 0.0
+              },
+              {
+                "x": 16.53,
+                "y": 0.0
+              },
+              {
+                "x": 16.53,
+                "y": 23.39
+              },
+              {
+                "x": 0.0,
+                "y": 23.39
+              }
+            ],
+            "thickness_m": 0.15,
+            "elevation_m": 5.0,
+            "material_id": "MAT-CONC-01",
+            "confidence": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "deskew_angle": 0.0,
+    "resolution": "1653x2339"
+  },
+  "created_at": "2026-11-06T06:29:33.632847+00:00",
+  "updated_at": "2026-11-06T06:29:33.633013+00:00"
+}

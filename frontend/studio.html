@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BuildSmart 3D Studio | AI Architectural 2D-to-3D BIM Conversion</title>
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            desert: {
+              DEFAULT: '#D4A853',
+              50: '#FBF8F0',
+              100: '#F5EED8',
+              200: '#EBDCB1',
+              300: '#E0C888',
+              400: '#D8B866',
+              500: '#D4A853',
+              600: '#B88D37',
+              700: '#8C6B28',
+              800: '#60491A',
+              900: '#34270C',
+            },
+            cad: {
+              bg: '#12161C',
+              panel: '#1A2028',
+              border: '#2C3542',
+              hover: '#242D38',
+              text: '#E2E8F0',
+              muted: '#8A99AD'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Three.js & OrbitControls -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <style>
+    body {
+      background-color: #12161C;
+      color: #E2E8F0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      overflow: hidden;
+      user-select: none;
+    }
+    /* Custom CAD scrollbars */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #12161C;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2C3542;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #D4A853;
+    }
+    .ribbon-btn {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.375rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: #CBD5E1;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+    }
+    .ribbon-btn:hover {
+      background-color: #242D38;
+      color: #D4A853;
+      border-color: #3B4758;
+    }
+    .ribbon-btn.active {
+      background-color: #263342;
+      color: #D4A853;
+      border-color: #D4A853;
+    }
+    .viewcube-btn {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(26, 32, 40, 0.85);
+      border: 1px solid #3B4758;
+      color: #CBD5E1;
+      font-size: 0.65rem;
+      font-weight: bold;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .viewcube-btn:hover {
+      background: #D4A853;
+      color: #12161C;
+    }
+  </style>
+</head>
+<body class="h-screen w-screen flex flex-col">
+
+  <!-- TOP RIBBON BAR (BricsCAD BIM / Revit Style) -->
+  <header class="bg-cad-panel border-b border-cad-border flex flex-col z-30 flex-shrink-0">
+    <!-- Main Header Line -->
+    <div class="h-12 px-4 flex items-center justify-between border-b border-cad-border/60">
+      <div class="flex items-center space-x-3">
+        <a href="/" class="flex items-center space-x-2 text-cad-muted hover:text-white transition">
+          <i class="fa-solid fa-arrow-left text-sm"></i>
+          <span class="text-xs font-medium">BuildSmartAI</span>
+        </a>
+        <div class="h-4 w-px bg-cad-border"></div>
+        <div class="flex items-center space-x-2">
+          <span class="p-1.5 bg-desert/20 text-desert rounded border border-desert/40">
+            <i class="fa-solid fa-cube text-sm"></i>
+          </span>
+          <div>
+            <h1 class="text-sm font-bold tracking-wide text-white flex items-center gap-2">
+              BuildSmart 3D Studio
+              <span class="text-[10px] font-semibold uppercase px-1.5 py-0.5 rounded bg-desert/20 text-desert border border-desert/30">BIM v1.0</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Current Project Badge -->
+      <div class="flex items-center space-x-3 bg-cad-bg px-3 py-1 rounded border border-cad-border text-xs">
+        <span class="text-cad-muted">Active Model:</span>
+        <span id="headerProjectName" class="font-semibold text-desert">Contemporary 2-Story Villa</span>
+        <span id="headerProjectFormat" class="px-1.5 py-0.2 bg-emerald-900/60 text-emerald-300 rounded text-[10px] border border-emerald-700">DXF</span>
+      </div>
+
+      <!-- Revision History & Undo/Redo Badges -->
+      <div class="flex items-center space-x-1.5 px-3 border-r border-cad-border/60">
+        <span class="text-[10px] uppercase font-bold text-cad-muted mr-1">History</span>
+        <span id="revisionBadge" class="px-2 py-0.5 bg-cad-bg text-desert font-mono text-xs rounded border border-cad-border" title="Current Design Revision">v1</span>
+        <button onclick="undoModification()" id="btnUndo" class="px-2.5 py-1 bg-cad-bg hover:bg-cad-hover text-cad-text hover:text-desert rounded border border-cad-border text-xs transition" title="Undo Modification">
+          <i class="fa-solid fa-rotate-left"></i>
+        </button>
+        <button onclick="redoModification()" id="btnRedo" class="px-2.5 py-1 bg-cad-bg hover:bg-cad-hover text-cad-text hover:text-desert rounded border border-cad-border text-xs transition" title="Redo Modification">
+          <i class="fa-solid fa-rotate-right"></i>
+        </button>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex items-center space-x-2">
+        <button onclick="openUploadModal()" class="px-3 py-1.5 bg-desert text-cad-bg hover:bg-desert-400 font-semibold text-xs rounded transition flex items-center gap-1.5 shadow-sm">
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+          <span>Import Drawing</span>
+        </button>
+        <button onclick="exportGLB()" class="px-3 py-1.5 bg-cad-hover text-cad-text hover:text-white hover:border-desert text-xs rounded border border-cad-border transition flex items-center gap-1.5">
+          <i class="fa-solid fa-download text-desert"></i>
+          <span>Export GLB</span>
+        </button>
+        <button onclick="exportOBJ()" class="px-3 py-1.5 bg-cad-hover text-cad-text hover:text-white hover:border-desert text-xs rounded border border-cad-border transition flex items-center gap-1.5">
+          <i class="fa-solid fa-file-export text-desert"></i>
+          <span>Export OBJ</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Secondary Ribbon: Modeling & View Tools -->
+    <div class="h-14 px-4 flex items-center justify-between text-xs overflow-x-auto bg-[#161B22]">
+      <!-- Views & Visual Styles Group -->
+      <div class="flex items-center space-x-1 border-r border-cad-border/60 pr-3">
+        <span class="text-[10px] uppercase font-bold text-cad-muted mr-1">Views</span>
+        <button onclick="setCameraView('iso')" class="ribbon-btn active" id="btnViewIso">
+          <i class="fa-solid fa-cube text-base mb-0.5"></i>
+          <span>Isometric</span>
+        </button>
+        <button onclick="setCameraView('top')" class="ribbon-btn" id="btnViewTop">
+          <i class="fa-solid fa-table-cells text-base mb-0.5"></i>
+          <span>Top</span>
+        </button>
+        <button onclick="setCameraView('front')" class="ribbon-btn" id="btnViewFront">
+          <i class="fa-solid fa-border-all text-base mb-0.5"></i>
+          <span>Front</span>
+        </button>
+        <button onclick="setCameraView('right')" class="ribbon-btn" id="btnViewRight">
+          <i class="fa-solid fa-square text-base mb-0.5"></i>
+          <span>Side</span>
+        </button>
+      </div>
+
+      <!-- Visual Styles -->
+      <div class="flex items-center space-x-1 border-r border-cad-border/60 px-3">
+        <span class="text-[10px] uppercase font-bold text-cad-muted mr-1">Style</span>
+        <button onclick="setVisualStyle('realistic')" class="ribbon-btn active" id="btnStyleReal">
+          <i class="fa-solid fa-palette text-base mb-0.5"></i>
+          <span>Realistic</span>
+        </button>
+        <button onclick="setVisualStyle('wireframe')" class="ribbon-btn" id="btnStyleWire">
+          <i class="fa-solid fa-draw-polygon text-base mb-0.5"></i>
+          <span>Wireframe</span>
+        </button>
+        <button onclick="setVisualStyle('transparent')" class="ribbon-btn" id="btnStyleTrans">
+          <i class="fa-solid fa-ghost text-base mb-0.5"></i>
+          <span>X-Ray</span>
+        </button>
+      </div>
+
+      <!-- Story / Exploded View Controls -->
+      <div class="flex items-center space-x-4 px-3">
+        <div class="flex items-center space-x-2">
+          <label class="text-[11px] font-medium text-cad-muted">Floor Filter:</label>
+          <select id="floorSelect" onchange="filterFloor(this.value)" class="bg-cad-bg border border-cad-border text-white text-xs rounded px-2 py-1 outline-none focus:border-desert">
+            <option value="ALL">All Floors (Full Building)</option>
+            <option value="0">Ground Floor</option>
+            <option value="1">Level 02 (First Floor)</option>
+          </select>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <label class="text-[11px] font-medium text-cad-muted flex items-center gap-1">
+            <i class="fa-solid fa-layer-group text-desert"></i>
+            <span>Exploded View:</span>
+          </label>
+          <input type="range" id="explodeSlider" min="0" max="100" value="0" oninput="setExplodedHeight(this.value)" class="w-24 accent-desert cursor-pointer">
+          <span id="explodeValue" class="text-[11px] font-mono text-desert w-8">0%</span>
+        </div>
+      </div>
+
+      <!-- Studio Quick Toggles -->
+      <div class="flex items-center space-x-2 pl-3 border-l border-cad-border/60">
+        <button onclick="toggleGrid()" id="btnGridToggle" class="px-2.5 py-1 bg-cad-bg hover:bg-cad-hover text-cad-text rounded border border-cad-border text-xs flex items-center gap-1.5">
+          <i class="fa-solid fa-border-none text-desert"></i>
+          <span>Grid</span>
+        </button>
+        <button onclick="resetCamera()" class="px-2.5 py-1 bg-cad-bg hover:bg-cad-hover text-cad-text rounded border border-cad-border text-xs flex items-center gap-1.5">
+          <i class="fa-solid fa-crosshairs text-desert"></i>
+          <span>Reset View</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN 3-PANEL STUDIO BODY -->
+  <div class="flex-1 flex overflow-hidden relative">
+
+    <!-- LEFT PANEL: BIM TREE HIERARCHY -->
+    <aside class="w-72 bg-cad-panel border-r border-cad-border flex flex-col flex-shrink-0 z-20">
+      <!-- Panel Header -->
+      <div class="p-3 border-b border-cad-border flex items-center justify-between bg-[#161B22]">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-sitemap text-desert text-xs"></i>
+          <span class="text-xs font-bold uppercase tracking-wider text-cad-text">BIM Structure</span>
+        </div>
+        <span id="bimTotalBuiltup" class="text-[11px] font-mono text-desert">216 m²</span>
+      </div>
+
+      <!-- Tree Content -->
+      <div class="flex-1 overflow-y-auto p-2 space-y-3 text-xs">
+        
+        <!-- Floor Stories Section -->
+        <div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted px-2 py-1 flex items-center justify-between">
+            <span>Building Levels</span>
+            <span id="bimLevelCount" class="bg-cad-bg px-1.5 py-0.2 rounded text-desert font-mono">2</span>
+          </div>
+          <div id="bimLevelsList" class="space-y-1 mt-1">
+            <!-- Dynamic Levels -->
+          </div>
+        </div>
+
+        <!-- Architectural Components Tree -->
+        <div class="border-t border-cad-border/60 pt-2">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted px-2 py-1 flex items-center justify-between">
+            <span>Building Elements</span>
+            <span id="bimTotalElements" class="bg-cad-bg px-1.5 py-0.2 rounded text-desert font-mono">27</span>
+          </div>
+          <div id="bimElementsList" class="space-y-1 mt-1">
+            <!-- Dynamic Elements (Walls, Doors, Windows, Slabs, Rooms) -->
+          </div>
+        </div>
+
+        <!-- Architectural Sections -->
+        <div class="border-t border-cad-border/60 pt-2">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted px-2 py-1">
+            <span>Drawings & Sections</span>
+          </div>
+          <div class="space-y-1 mt-1 text-[11px]">
+            <div class="px-2 py-1.5 rounded hover:bg-cad-hover text-cad-text flex items-center gap-2 cursor-pointer" onclick="setCameraView('top')">
+              <i class="fa-regular fa-file-lines text-desert"></i>
+              <span>Interior Floor Plan</span>
+            </div>
+            <div class="px-2 py-1.5 rounded hover:bg-cad-hover text-cad-text flex items-center gap-2 cursor-pointer" onclick="setCameraView('front')">
+              <i class="fa-regular fa-file-lines text-desert"></i>
+              <span>Exterior Front Elevation</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Left Panel Footer: Project Stats -->
+      <div class="p-3 bg-[#14181D] border-t border-cad-border text-[11px] space-y-1">
+        <div class="flex justify-between text-cad-muted">
+          <span>Height:</span>
+          <span id="statHeight" class="text-cad-text font-mono">6.00 m</span>
+        </div>
+        <div class="flex justify-between text-cad-muted">
+          <span>Footprint:</span>
+          <span id="statFootprint" class="text-cad-text font-mono">108.0 m²</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CENTER VIEWPORT: THREE.JS 360° WEBGL CANVAS -->
+    <main class="flex-1 relative bg-[#0D1117] overflow-hidden" id="viewportContainer">
+      <canvas id="studioCanvas" class="w-full h-full block outline-none cursor-grab active:cursor-grabbing"></canvas>
+
+      <!-- Viewport Overlay: Interactive View Cube Gizmo -->
+      <div class="absolute top-4 right-4 z-10 flex flex-col items-center bg-cad-panel/90 backdrop-blur p-2 rounded-lg border border-cad-border shadow-lg">
+        <span class="text-[9px] font-bold uppercase tracking-wider text-cad-muted mb-1">View Gizmo</span>
+        <div class="grid grid-cols-3 gap-1">
+          <div></div>
+          <button class="viewcube-btn" onclick="setCameraView('top')">T</button>
+          <div></div>
+          <button class="viewcube-btn" onclick="setCameraView('left')">L</button>
+          <button class="viewcube-btn font-bold text-desert" onclick="setCameraView('front')">F</button>
+          <button class="viewcube-btn" onclick="setCameraView('right')">R</button>
+          <div></div>
+          <button class="viewcube-btn" onclick="setCameraView('back')">B</button>
+          <div></div>
+        </div>
+        <button class="w-full mt-1.5 py-0.5 text-[9px] font-bold bg-cad-bg hover:bg-desert hover:text-cad-bg text-cad-text border border-cad-border rounded transition" onclick="setCameraView('iso')">
+          ISO 3D
+        </button>
+      </div>
+
+      <!-- Viewport Overlay: Bottom Left Coordinate Triad & Scale -->
+      <div class="absolute bottom-4 left-4 z-10 flex items-center space-x-3 bg-cad-panel/80 backdrop-blur px-3 py-1.5 rounded border border-cad-border text-xs">
+        <div class="flex items-center space-x-1.5 font-mono text-[11px]">
+          <span class="text-rose-400 font-bold">X</span>
+          <span class="text-emerald-400 font-bold">Y</span>
+          <span class="text-sky-400 font-bold">Z</span>
+        </div>
+        <div class="h-3 w-px bg-cad-border"></div>
+        <span class="text-cad-muted text-[11px]">Grid: <strong class="text-white">1.0 m</strong></span>
+        <div class="h-3 w-px bg-cad-border"></div>
+        <span id="viewportPrompt" class="text-cad-muted text-[11px]">Click any element to inspect & edit</span>
+      </div>
+
+      <!-- Element Hover Tooltip -->
+      <div id="hoverTooltip" class="absolute pointer-events-none hidden bg-cad-panel/95 backdrop-blur border border-desert px-2.5 py-1.5 rounded text-xs shadow-xl z-20">
+        <div id="hoverElementName" class="font-bold text-white">Wall GF_W_FRONT</div>
+        <div id="hoverElementDetails" class="text-[11px] text-desert font-mono">12.0m x 3.0m x 0.23m</div>
+      </div>
+
+      <!-- Floating Conversational AI Architectural Modification Copilot -->
+      <div class="absolute bottom-5 left-1/2 -translate-x-1/2 w-11/12 max-w-3xl z-30 pointer-events-auto">
+        <div class="bg-[#14181f]/95 backdrop-blur-md border border-desert/40 hover:border-desert rounded-2xl shadow-2xl p-2.5 transition-all">
+          
+          <!-- Chips / Quick Prompt Suggestions -->
+          <div class="flex items-center space-x-1.5 overflow-x-auto pb-1.5 px-1 scrollbar-none text-[11px]">
+            <span class="text-desert font-semibold flex items-center gap-1 mr-1 flex-shrink-0">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> AI Copilot:
+            </span>
+            <button type="button" onclick="setPromptAndFocus('Add 1 floor with 3 bedrooms and 1 washroom')" class="px-2.5 py-0.5 bg-cad-panel hover:bg-desert hover:text-cad-bg text-cad-text rounded-full border border-cad-border whitespace-nowrap transition">
+              + 1 Floor (3 Bed, 1 Bath)
+            </button>
+            <button type="button" onclick="setPromptAndFocus('Increase Master Bedroom to 4.5 by 4.0 meters')" class="px-2.5 py-0.5 bg-cad-panel hover:bg-desert hover:text-cad-bg text-cad-text rounded-full border border-cad-border whitespace-nowrap transition">
+              Enlarge Master Bed (4.5×4m)
+            </button>
+            <button type="button" onclick="setPromptAndFocus('Add attached bathroom to Master Bedroom')" class="px-2.5 py-0.5 bg-cad-panel hover:bg-desert hover:text-cad-bg text-cad-text rounded-full border border-cad-border whitespace-nowrap transition">
+              + Attached Bath
+            </button>
+            <button type="button" onclick="setPromptAndFocus('Add staircase connecting ground floor to first floor')" class="px-2.5 py-0.5 bg-cad-panel hover:bg-desert hover:text-cad-bg text-cad-text rounded-full border border-cad-border whitespace-nowrap transition">
+              + Staircase
+            </button>
+            <button type="button" onclick="openRoomSettingsModal()" class="px-2 py-0.5 bg-cad-panel hover:bg-cad-hover text-cad-muted hover:text-white rounded-full border border-cad-border whitespace-nowrap ml-auto" title="Configure Room Dimension Library">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+          </div>
+
+          <!-- Main Prompt Input & Action Controls -->
+          <div class="flex items-center space-x-2 bg-[#0d1117] border border-cad-border rounded-xl px-3 py-1.5 focus-within:border-desert transition">
+            <i class="fa-solid fa-comments text-desert text-sm"></i>
+            <input 
+              id="aiPromptInput" 
+              type="text" 
+              placeholder="Ask AI: e.g. 'Add 1 floor with 3 bedrooms and 1 washroom' or 'Add balcony on first floor'"
+              class="flex-1 bg-transparent text-white text-xs md:text-sm placeholder-cad-muted outline-none"
+              onkeydown="if(event.key==='Enter') applyDirectModification()"
+            />
+            
+            <!-- Plan / Preview Button (Stage 1) -->
+            <button 
+              type="button" 
+              onclick="previewModification()" 
+              id="btnAiPreview" 
+              class="px-3 py-1.5 bg-cad-hover hover:bg-cad-border text-cad-text hover:text-white text-xs font-medium rounded-lg border border-cad-border transition flex items-center gap-1"
+              title="Preview Architectural Spatial Proposal"
+            >
+              <i class="fa-solid fa-compass-drafting text-desert"></i>
+              <span>Plan</span>
+            </button>
+
+            <!-- Direct 3D Apply Button (Stage 2) -->
+            <button 
+              type="button" 
+              onclick="applyDirectModification()" 
+              id="btnAiApply" 
+              class="px-4 py-1.5 bg-desert hover:bg-desert-400 text-cad-bg font-bold text-xs rounded-lg transition flex items-center gap-1.5 shadow-md"
+            >
+              <i class="fa-solid fa-cube"></i>
+              <span>Apply 3D</span>
+            </button>
+          </div>
+
+          <!-- Live Status Feedback Notification Banner -->
+          <div id="aiStatusPill" class="hidden mt-1.5 px-3 py-1 bg-desert/10 border border-desert/30 rounded-lg text-xs text-desert flex items-center justify-between">
+            <span id="aiStatusText" class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-notch fa-spin"></i>
+              <span>Calculating spatial zoning and generating 3D floor geometry...</span>
+            </span>
+            <button onclick="document.getElementById('aiStatusPill').classList.add('hidden')" class="text-cad-muted hover:text-white ml-2 text-xs">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- RIGHT PANEL: BIM PROPERTY INSPECTOR & MATERIAL CUSTOMIZER -->
+    <aside class="w-80 bg-cad-panel border-l border-cad-border flex flex-col flex-shrink-0 z-20">
+      <!-- Inspector Header -->
+      <div class="p-3 border-b border-cad-border flex items-center justify-between bg-[#161B22]">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-sliders text-desert text-xs"></i>
+          <span class="text-xs font-bold uppercase tracking-wider text-cad-text">Property Inspector</span>
+        </div>
+        <span id="selectedCategoryBadge" class="text-[10px] px-2 py-0.5 rounded bg-cad-bg border border-cad-border text-desert font-medium">No Selection</span>
+      </div>
+
+      <!-- Inspector Body -->
+      <div class="flex-1 overflow-y-auto p-4 space-y-4 text-xs" id="inspectorContent">
+        
+        <!-- Element Identification -->
+        <div class="space-y-2">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted">Element Properties</div>
+          <div class="bg-cad-bg p-3 rounded border border-cad-border space-y-2">
+            <div class="flex justify-between items-center">
+              <span class="text-cad-muted">ID:</span>
+              <span id="inspElementId" class="font-mono text-desert font-semibold">-</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-cad-muted">Name:</span>
+              <span id="inspElementName" class="text-white font-medium">-</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-cad-muted">Story:</span>
+              <span id="inspElementStory" class="text-white">-</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span class="text-cad-muted">Type:</span>
+              <span id="inspElementType" class="text-white font-medium">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Geometry & Dimensions -->
+        <div class="space-y-2">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted">Geometric Dimensions</div>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-cad-bg p-2 rounded border border-cad-border">
+              <span class="text-[10px] text-cad-muted block">Length / Width</span>
+              <span id="inspDimLength" class="font-mono text-white text-sm font-semibold">-</span>
+            </div>
+            <div class="bg-cad-bg p-2 rounded border border-cad-border">
+              <span class="text-[10px] text-cad-muted block">Height</span>
+              <span id="inspDimHeight" class="font-mono text-white text-sm font-semibold">-</span>
+            </div>
+            <div class="bg-cad-bg p-2 rounded border border-cad-border">
+              <span class="text-[10px] text-cad-muted block">Thickness</span>
+              <span id="inspDimThickness" class="font-mono text-white text-sm font-semibold">-</span>
+            </div>
+            <div class="bg-cad-bg p-2 rounded border border-cad-border">
+              <span class="text-[10px] text-cad-muted block">Surface Area</span>
+              <span id="inspDimArea" class="font-mono text-desert text-sm font-semibold">-</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PBR Material Customization -->
+        <div class="space-y-2">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted flex items-center justify-between">
+            <span>Material & Texture</span>
+            <span id="inspCurrentMaterialName" class="text-desert font-mono text-[11px]">-</span>
+          </div>
+          <div class="space-y-2 bg-cad-bg p-3 rounded border border-cad-border">
+            <label class="text-[11px] text-cad-muted block">Select Architectural Material:</label>
+            <select id="inspMaterialSelect" onchange="applySelectedMaterial(this.value)" class="w-full bg-cad-panel border border-cad-border text-white text-xs rounded px-2.5 py-1.5 outline-none focus:border-desert">
+              <!-- Dynamically populated from /api/studio/materials -->
+            </select>
+            
+            <div class="pt-2 flex items-center justify-between">
+              <div class="flex items-center space-x-2">
+                <div id="inspMaterialColorSwatch" class="w-6 h-6 rounded border border-white/20 shadow-inner"></div>
+                <span id="inspMaterialHex" class="font-mono text-[11px] text-cad-muted">#CCCCCC</span>
+              </div>
+              <span id="inspMaterialCategory" class="text-[10px] px-2 py-0.5 rounded bg-cad-panel text-desert border border-cad-border">WALL</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Structural & Verification Badges -->
+        <div class="space-y-2">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted">BIM Classification</div>
+          <div class="space-y-1.5 text-[11px]">
+            <div class="flex justify-between items-center bg-cad-bg p-2 rounded border border-cad-border">
+              <span class="text-cad-muted">Structural Bearing:</span>
+              <span id="inspBadgeStructural" class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i>Yes</span>
+            </div>
+            <div class="flex justify-between items-center bg-cad-bg p-2 rounded border border-cad-border">
+              <span class="text-cad-muted">AI Confidence:</span>
+              <span id="inspBadgeConfidence" class="text-desert font-semibold font-mono">95% (HIGH)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Panel Footer -->
+      <div class="p-3 bg-[#14181D] border-t border-cad-border flex items-center justify-between">
+        <button onclick="isolateSelectedElement()" class="flex-1 mr-2 px-3 py-1.5 bg-cad-bg hover:bg-cad-hover text-cad-text hover:text-white rounded border border-cad-border text-xs transition">
+          <i class="fa-solid fa-expand text-desert mr-1"></i> Isolate
+        </button>
+        <button onclick="clearSelection()" class="px-3 py-1.5 bg-cad-bg hover:bg-cad-hover text-cad-muted hover:text-white rounded border border-cad-border text-xs transition">
+          Clear
+        </button>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- DRAWING INGESTION & SCALE CALIBRATION MODAL -->
+  <div id="uploadModal" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-cad-panel border border-cad-border rounded-xl max-w-lg w-full p-6 shadow-2xl relative">
+      <button onclick="closeUploadModal()" class="absolute top-4 right-4 text-cad-muted hover:text-white text-base">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-desert/20 text-desert rounded-lg border border-desert/30">
+          <i class="fa-solid fa-file-import text-lg"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-bold text-white">Import Architectural Drawing</h2>
+          <p class="text-xs text-cad-muted">Accepts DXF, DWG pipeline, multi-page PDF, PNG, and JPG drawings.</p>
+        </div>
+      </div>
+
+      <form id="uploadDrawingForm" onsubmit="handleDrawingUpload(event)" class="space-y-4">
+        <!-- File input drop area -->
+        <div class="border-2 border-dashed border-cad-border hover:border-desert rounded-lg p-6 text-center cursor-pointer transition bg-cad-bg/50" onclick="document.getElementById('fileInput').click()">
+          <input type="file" id="fileInput" name="file" accept=".dxf,.dwg,.pdf,.png,.jpg,.jpeg" class="hidden" onchange="displaySelectedFilename(this)">
+          <i class="fa-solid fa-cloud-arrow-up text-3xl text-desert mb-2 block"></i>
+          <span id="uploadLabel" class="text-xs font-medium text-cad-text block">Click to browse or drop architectural drawing here</span>
+          <span class="text-[10px] text-cad-muted block mt-1">DXF (AutoCAD/BricsCAD), PDF Blueprints, JPG/PNG floor plans</span>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div>
+            <label class="text-[11px] text-cad-muted block mb-1">Project Name</label>
+            <input type="text" id="uploadProjectName" name="project_name" value="Modern Residential Villa" class="w-full bg-cad-bg border border-cad-border text-white rounded px-3 py-1.5 outline-none focus:border-desert">
+          </div>
+          <div>
+            <label class="text-[11px] text-cad-muted block mb-1">Floors (Stories)</label>
+            <input type="number" id="uploadFloors" name="num_floors" value="2" min="1" max="10" class="w-full bg-cad-bg border border-cad-border text-white rounded px-3 py-1.5 outline-none focus:border-desert">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 text-xs">
+          <div>
+            <label class="text-[11px] text-cad-muted block mb-1">Floor Height (m)</label>
+            <input type="number" id="uploadHeight" name="floor_height_m" value="3.0" step="0.1" min="2.0" max="6.0" class="w-full bg-cad-bg border border-cad-border text-white rounded px-3 py-1.5 outline-none focus:border-desert">
+          </div>
+          <div>
+            <label class="text-[11px] text-cad-muted block mb-1">Scale (px per meter)</label>
+            <input type="number" id="uploadScale" name="pixels_per_meter" value="100.0" step="5" class="w-full bg-cad-bg border border-cad-border text-white rounded px-3 py-1.5 outline-none focus:border-desert">
+          </div>
+        </div>
+
+        <!-- Processing Status Feedback -->
+        <div id="uploadStatusMsg" class="hidden text-xs p-2.5 rounded bg-desert/10 border border-desert/40 text-desert flex items-center gap-2">
+          <i class="fa-solid fa-circle-notch fa-spin"></i>
+          <span id="uploadStatusText">Analyzing architectural geometry and extracting 3D walls...</span>
+        </div>
+
+        <div class="flex justify-end space-x-2 pt-2 border-t border-cad-border">
+          <button type="button" onclick="closeUploadModal()" class="px-4 py-2 rounded bg-cad-bg border border-cad-border text-cad-text hover:text-white text-xs transition">
+            Cancel
+          </button>
+          <button type="submit" id="btnSubmitUpload" class="px-5 py-2 rounded bg-desert text-cad-bg font-semibold hover:bg-desert-400 text-xs transition flex items-center gap-2">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <span>Generate 3D Model</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ARCHITECTURAL MODIFICATION PROPOSAL MODAL (Stage 1) -->
+  <div id="proposalModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-cad-panel border border-cad-border rounded-xl max-w-xl w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeProposalModal()" class="absolute top-4 right-4 text-cad-muted hover:text-white text-base">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-desert/20 text-desert rounded-lg border border-desert/30">
+          <i class="fa-solid fa-compass-drafting text-lg"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-bold text-white">Architectural Modification Plan</h2>
+          <p class="text-xs text-cad-muted">Review calculated spatial zoning and structural parameters before regenerating 3D model.</p>
+        </div>
+      </div>
+
+      <!-- Proposed Plan Summary -->
+      <div class="space-y-4 text-xs">
+        <div class="bg-cad-bg p-3 rounded-lg border border-cad-border space-y-2">
+          <div class="flex justify-between items-center pb-2 border-b border-cad-border/60">
+            <span class="text-cad-muted">Requested Instruction:</span>
+            <span id="propUserPrompt" class="text-desert font-semibold text-right italic">"Add 1 floor with 3 bedrooms and 1 washroom"</span>
+          </div>
+          <div class="grid grid-cols-2 gap-2 text-[11px]">
+            <div>
+              <span class="text-cad-muted block">Operation:</span>
+              <span id="propOperation" class="text-white font-mono font-bold uppercase">ADD_FLOOR</span>
+            </div>
+            <div>
+              <span class="text-cad-muted block">Target Story / Elevation:</span>
+              <span id="propTargetElevation" class="text-white font-mono font-bold">Level 02 (+3.00 m)</span>
+            </div>
+            <div>
+              <span class="text-cad-muted block">Vertical Circulation:</span>
+              <span id="propStaircaseStatus" class="text-emerald-400 font-semibold"><i class="fa-solid fa-stairs mr-1"></i>Staircase Connected</span>
+            </div>
+            <div>
+              <span class="text-cad-muted block">Circulation Passage:</span>
+              <span id="propCirculationStatus" class="text-emerald-400 font-semibold"><i class="fa-solid fa-check mr-1"></i>1.0m Target Reserved</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Room Breakdown Table -->
+        <div>
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted mb-2 flex justify-between items-center">
+            <span>Proposed Room Schedule</span>
+            <span id="propRoomCountBadge" class="text-desert font-mono">4 Rooms</span>
+          </div>
+          <div class="bg-cad-bg border border-cad-border rounded-lg overflow-hidden">
+            <table class="w-full text-left border-collapse text-[11px]">
+              <thead class="bg-[#14181f] text-cad-muted uppercase text-[9px] font-bold border-b border-cad-border">
+                <tr>
+                  <th class="py-2 px-3">Room Type</th>
+                  <th class="py-2 px-3">Dimensions (W × L)</th>
+                  <th class="py-2 px-3 text-right">Floor Area</th>
+                </tr>
+              </thead>
+              <tbody id="propRoomsTableBody" class="divide-y divide-cad-border/50 text-cad-text">
+                <!-- Dynamically populated from proposal -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Spatial Validation Checks -->
+        <div class="bg-[#161B22] p-3 rounded-lg border border-cad-border space-y-1.5 text-[11px]">
+          <div class="text-[10px] font-bold uppercase tracking-wider text-cad-muted mb-1">Spatial & Structural Validation</div>
+          <div class="flex justify-between items-center">
+            <span class="text-cad-muted">Available Footprint Area:</span>
+            <span id="propFootprintArea" class="font-mono text-white">108.0 m²</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-cad-muted">Required Room Area:</span>
+            <span id="propRequiredArea" class="font-mono text-desert">42.0 m²</span>
+          </div>
+          <div class="flex justify-between items-center">
+            <span class="text-cad-muted">Boundary Containment Check:</span>
+            <span id="propContainmentCheck" class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check mr-1"></i>PASSED (Within structural boundary)</span>
+          </div>
+        </div>
+
+        <!-- Proposal Notes / Warnings -->
+        <div id="propNotesBox" class="p-2.5 rounded bg-desert/10 border border-desert/30 text-[11px] text-desert">
+          Layout will be generated deterministically within the building footprint with vertical staircase alignment.
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex justify-end space-x-2 pt-3 border-t border-cad-border">
+          <button type="button" onclick="closeProposalModal()" class="px-4 py-2 rounded bg-cad-bg border border-cad-border text-cad-text hover:text-white text-xs transition">
+            Cancel
+          </button>
+          <button type="button" onclick="confirmApplyProposal()" id="btnConfirmApplyProposal" class="px-5 py-2 rounded bg-desert text-cad-bg font-bold hover:bg-desert-400 text-xs transition flex items-center gap-2 shadow-md">
+            <i class="fa-solid fa-cube"></i>
+            <span>Apply to 3D Model</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROOM DIMENSION LIBRARY CONFIGURATION MODAL -->
+  <div id="roomSettingsModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-cad-panel border border-cad-border rounded-xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button onclick="closeRoomSettingsModal()" class="absolute top-4 right-4 text-cad-muted hover:text-white text-base">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center space-x-3 mb-4">
+        <div class="p-2.5 bg-desert/20 text-desert rounded-lg border border-desert/30">
+          <i class="fa-solid fa-ruler-combined text-lg"></i>
+        </div>
+        <div>
+          <h2 class="text-base font-bold text-white">Architectural Room Dimensions</h2>
+          <p class="text-xs text-cad-muted">Configurable design defaults used for layout generation (Meters).</p>
+        </div>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div id="roomLibraryForm" class="space-y-2.5">
+          <!-- Defaults -->
+          <div class="grid grid-cols-3 gap-2 items-center bg-cad-bg p-2 rounded border border-cad-border">
+            <span class="font-medium text-white">Standard Bedroom</span>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">W:</span>
+              <input type="number" id="lib_bedroom_w" value="3.6" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">L:</span>
+              <input type="number" id="lib_bedroom_l" value="3.6" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 items-center bg-cad-bg p-2 rounded border border-cad-border">
+            <span class="font-medium text-white">Master Bedroom</span>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">W:</span>
+              <input type="number" id="lib_master_w" value="4.5" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">L:</span>
+              <input type="number" id="lib_master_l" value="4.0" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 items-center bg-cad-bg p-2 rounded border border-cad-border">
+            <span class="font-medium text-white">Washroom / Bath</span>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">W:</span>
+              <input type="number" id="lib_washroom_w" value="1.5" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">L:</span>
+              <input type="number" id="lib_washroom_l" value="2.1" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 items-center bg-cad-bg p-2 rounded border border-cad-border">
+            <span class="font-medium text-white">Living Room</span>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">W:</span>
+              <input type="number" id="lib_living_w" value="4.5" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">L:</span>
+              <input type="number" id="lib_living_l" value="4.0" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-2 items-center bg-cad-bg p-2 rounded border border-cad-border">
+            <span class="font-medium text-white">Kitchen</span>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">W:</span>
+              <input type="number" id="lib_kitchen_w" value="3.0" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="text-[10px] text-cad-muted">L:</span>
+              <input type="number" id="lib_kitchen_l" value="3.0" step="0.1" class="w-16 bg-cad-panel border border-cad-border text-white text-xs rounded px-1.5 py-0.5 font-mono">
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2 text-[11px] bg-[#14181f] p-2.5 rounded border border-cad-border">
+          <div>
+            <span class="text-cad-muted block">Floor Height</span>
+            <span class="font-mono text-white font-semibold">3.00 m</span>
+          </div>
+          <div>
+            <span class="text-cad-muted block">Ext Wall Thick</span>
+            <span class="font-mono text-white font-semibold">0.23 m</span>
+          </div>
+          <div>
+            <span class="text-cad-muted block">Int Wall Thick</span>
+            <span class="font-mono text-white font-semibold">0.15 m</span>
+          </div>
+        </div>
+
+        <div class="flex justify-end space-x-2 pt-3 border-t border-cad-border">
+          <button type="button" onclick="closeRoomSettingsModal()" class="px-4 py-2 rounded bg-cad-bg border border-cad-border text-cad-text hover:text-white text-xs transition">
+            Close
+          </button>
+          <button type="button" onclick="saveRoomSettings()" class="px-5 py-2 rounded bg-desert text-cad-bg font-semibold hover:bg-desert-400 text-xs transition">
+            Save Standards
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Studio Viewport Script -->
+  <script src="/frontend/js/studio.js"></script>
+</body>
+</html>

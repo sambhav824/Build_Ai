@@ -1,0 +1,177 @@
+{
+  "project_id": "STU-C96EED77",
+  "project_name": "Modern Residential Villa",
+  "source_filename": "GATES BU GURUNATH - GROUND FLOOR.pdf",
+  "source_format": "PDF",
+  "units": "meters",
+  "scale_factor": 1.0,
+  "scale_verified": false,
+  "pixel_scale_ratio": 80.0,
+  "building": {
+    "building_id": "bld_ceff64",
+    "name": "Modern Residential Villa",
+    "levels": [
+      {
+        "level_id": "lvl_1",
+        "name": "Ground Floor",
+        "elevation_m": 0.0,
+        "floor_to_floor_height_m": 3.0,
+        "default_wall_height_m": 3.0,
+        "slab_thickness_m": 0.15,
+        "is_visible": true,
+        "opacity": 1.0,
+        "walls": [
+          {
+            "wall_id": "WALL_001",
+            "element_type": "WALL",
+            "start": {
+              "x": 8.05,
+              "y": 23.4116
+            },
+            "end": {
+              "x": 8.8375,
+              "y": 23.4116
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [],
+            "confidence": 0.92,
+            "confidence_level": "HIGH",
+            "verified": true,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_002",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.9875,
+              "y": 19.3375
+            },
+            "end": {
+              "x": 3.9875,
+              "y": 16.3
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "WIN_001",
+                "element_type": "WINDOW",
+                "wall_id": "WALL_002",
+                "offset_along_wall_m": 1.52,
+                "width_m": 1.4,
+                "height_m": 1.2,
+                "sill_height_m": 0.9,
+                "confidence": 0.88,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 0.92,
+            "confidence_level": "HIGH",
+            "verified": true,
+            "source_layer": null,
+            "is_structural": true
+          },
+          {
+            "wall_id": "WALL_003",
+            "element_type": "WALL",
+            "start": {
+              "x": 3.7,
+              "y": 19.35
+            },
+            "end": {
+              "x": 3.7,
+              "y": 16.325
+            },
+            "thickness_m": 0.23,
+            "height_m": 3.0,
+            "wall_type": "EXTERIOR",
+            "material_id": "MAT-PLAS-01",
+            "interior_material_id": "MAT-PLAS-02",
+            "openings": [
+              {
+                "opening_id": "WIN_002",
+                "element_type": "WINDOW",
+                "wall_id": "WALL_003",
+                "offset_along_wall_m": 1.51,
+                "width_m": 1.4,
+                "height_m": 1.2,
+                "sill_height_m": 0.9,
+                "confidence": 0.88,
+                "confidence_level": "HIGH",
+                "verified": false,
+                "source_layer": null
+              }
+            ],
+            "confidence": 0.92,
+            "confidence_level": "HIGH",
+            "verified": true,
+            "source_layer": null,
+            "is_structural": true
+          }
+        ],
+        "doors": [],
+        "windows": [],
+        "rooms": [],
+        "stairs": [],
+        "columns": [],
+        "slabs": [
+          {
+            "slab_id": "SLAB_L1_01",
+            "element_type": "SLAB",
+            "boundary_polygon": [
+              {
+                "x": 3.6,
+                "y": 16.2
+              },
+              {
+                "x": 8.94,
+                "y": 16.2
+              },
+              {
+                "x": 8.94,
+                "y": 23.51
+              },
+              {
+                "x": 3.6,
+                "y": 23.51
+              }
+            ],
+            "thickness_m": 0.15,
+            "elevation_m": 0.0,
+            "material_id": "MAT-CONC-01",
+            "confidence": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "metadata": {
+    "deskew_angle": 0.0,
+    "plan_roi": [
+      32,
+      72,
+      887,
+      2192
+    ],
+    "scale_note": "User-supplied scale",
+    "footprint_dimensions": "5.14m x 7.11m (36.55 m²)",
+    "nominal_plot": "9.0m x 12.0m (108.0 m²)",
+    "detected_walls_count": 3,
+    "detected_rooms_count": 0,
+    "detected_doors_count": 0,
+    "detected_windows_count": 2,
+    "validation_warnings": []
+  },
+  "created_at": "2026-11-06T04:26:02.561720+00:00",
+  "updated_at": "2026-11-06T04:26:02.561792+00:00"
+}

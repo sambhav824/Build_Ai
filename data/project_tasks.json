@@ -1,0 +1,114 @@
+[
+  {
+    "task_id": "T01",
+    "name": "Site Survey & Layout Marking",
+    "duration_days": 3,
+    "predecessors": [],
+    "is_critical": true,
+    "category": "Site Preparation"
+  },
+  {
+    "task_id": "T02",
+    "name": "Site Clearing & Excavation",
+    "duration_days": 7,
+    "predecessors": ["T01"],
+    "is_critical": true,
+    "category": "Site Preparation"
+  },
+  {
+    "task_id": "T03",
+    "name": "Foundation PCC (Plain Cement Concrete)",
+    "duration_days": 4,
+    "predecessors": ["T02"],
+    "is_critical": true,
+    "category": "Foundation"
+  },
+  {
+    "task_id": "T04",
+    "name": "Footings & Column Bases (RCC)",
+    "duration_days": 10,
+    "predecessors": ["T03"],
+    "is_critical": true,
+    "category": "Foundation"
+  },
+  {
+    "task_id": "T05",
+    "name": "Plinth Beam & Anti-Termite Treatment",
+    "duration_days": 7,
+    "predecessors": ["T04"],
+    "is_critical": true,
+    "category": "Foundation"
+  },
+  {
+    "task_id": "T06",
+    "name": "Ground Floor Columns & Walls (RCC Framing)",
+    "duration_days": 21,
+    "predecessors": ["T05"],
+    "is_critical": true,
+    "category": "Structural"
+  },
+  {
+    "task_id": "T07",
+    "name": "Ground Floor Roof Slab (RCC)",
+    "duration_days": 14,
+    "predecessors": ["T06"],
+    "is_critical": true,
+    "category": "Structural"
+  },
+  {
+    "task_id": "T08",
+    "name": "Brick / Block Masonry (Partition Walls)",
+    "duration_days": 21,
+    "predecessors": ["T07"],
+    "is_critical": true,
+    "category": "Masonry"
+  },
+  {
+    "task_id": "T09",
+    "name": "Plastering (Internal & External)",
+    "duration_days": 21,
+    "predecessors": ["T08"],
+    "is_critical": true,
+    "category": "Finishing"
+  },
+  {
+    "task_id": "T10",
+    "name": "Plumbing & Drainage Rough-In",
+    "duration_days": 14,
+    "predecessors": ["T07"],
+    "is_critical": false,
+    "category": "MEP"
+  },
+  {
+    "task_id": "T11",
+    "name": "Electrical Conduit & Wiring Rough-In",
+    "duration_days": 14,
+    "predecessors": ["T07"],
+    "is_critical": false,
+    "category": "MEP"
+  },
+  {
+    "task_id": "T12",
+    "name": "Flooring & Wall Tiling",
+    "duration_days": 21,
+    "predecessors": ["T09", "T10", "T11"],
+    "is_critical": true,
+    "category": "Finishing"
+  },
+  {
+    "task_id": "T13",
+    "name": "Painting (Internal 2 Coats + External 1 Coat)",
+    "duration_days": 14,
+    "predecessors": ["T12"],
+    "is_critical": true,
+    "category": "Finishing"
+  },
+  {
+    "task_id": "T14",
+    "name": "Doors, Windows, Fixtures & Final Inspection",
+    "duration_days": 14,
+    "predecessors": ["T13"],
+    "is_critical": true,
+    "category": "Handover"
+  }
+]

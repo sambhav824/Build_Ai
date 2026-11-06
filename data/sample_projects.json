@@ -1,0 +1,41 @@
+[
+  {
+    "project_id": "BS-1001",
+    "name": "Modern 2BHK Residential Villa",
+    "client_name": "Mr. Rushikesh K.",
+    "plot_area_sqft": 1200.0,
+    "plot_length_ft": 40.0,
+    "plot_width_ft": 30.0,
+    "bhk_configuration": "2BHK",
+    "floors": 1,
+    "budget": 3500000.0,
+    "architectural_style": "Modern Contemporary",
+    "status": "PLANNING",
+    "raw_requirements": "I want a modern 2BHK residential house on a 1,200 sq. ft. plot with two bedrooms, two bathrooms, living room, kitchen, dining space, balcony and parking. My budget is \u20b935 lakh.",
+    "structured_requirements": {
+      "bhk": "2BHK",
+      "bedrooms": 2,
+      "bathrooms": 2,
+      "floors": 1,
+      "plot_area_sqft": 1200.0,
+      "plot_length_ft": 40.0,
+      "plot_width_ft": 30.0,
+      "budget_inr": 3500000.0,
+      "architectural_style": "Modern Contemporary",
+      "rooms": [
+        {"name": "Master Bedroom", "area_sqft": 180},
+        {"name": "Bedroom 2",      "area_sqft": 140},
+        {"name": "Master Bathroom","area_sqft": 50},
+        {"name": "Bathroom 2",     "area_sqft": 40},
+        {"name": "Living Room",    "area_sqft": 180},
+        {"name": "Kitchen",        "area_sqft": 90},
+        {"name": "Dining Area",    "area_sqft": 80},
+        {"name": "Balcony",        "area_sqft": 60},
+        {"name": "Parking",        "area_sqft": 90}
+      ],
+      "setbacks": {"front_ft": 5, "rear_ft": 3, "left_ft": 3, "right_ft": 3},
+      "permissible_ground_coverage_pct": 65,
+      "note": "ILLUSTRATIVE / SAMPLE DATA — verify with local municipal authority before proceeding."
+    }
+  }
+]
