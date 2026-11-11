@@ -1,376 +1,179 @@
-# BuildSmartAI 🏗️
+# 🏗️ BuildSmartAI
 
-> **AI-Powered Multi-Agent Residential Construction Planning, Design & Site Intelligence Platform**
+> **Your AI-powered construction crew — from a simple idea to blueprints, budgets, 3D models, and site monitoring.**
 
-BuildSmartAI transforms unstructured customer requirements into a fully managed residential construction project using five specialised AI agents coordinated by a central orchestrator.
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
+[![Three.js](https://img.shields.io/badge/Three.js-WebGL-black?style=flat&logo=three.js&logoColor=white)](https://threejs.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-Computer_Vision-5C3EE8?style=flat&logo=opencv&logoColor=white)](https://opencv.org/)
+[![Repository](https://img.shields.io/badge/GitHub-sambhav824%2FBuild__Ai-blue?style=flat&logo=github)](https://github.com/sambhav824/Build_Ai)
 
 ---
 
-## Architecture
+## 💡 What is BuildSmartAI?
+
+Building a home is exciting, but coordinating between architects, contractors, quantity estimators, and site supervisors can quickly become overwhelming.
+
+**BuildSmartAI** solves this by acting as your complete digital construction team. Simply type what you want in everyday language—for example:
+
+> *"I want a modern 2BHK villa on a 30x40 ft plot with a spacious living room, open kitchen, parking, and a budget of ₹35 lakh."*
+
+Within moments, BuildSmartAI coordinates a team of **5 specialized AI agents** to plan your rooms, draw 2D floor plans, generate interactive 3D models, compute precise material and cost estimates (BOQ), map out a day-by-day construction timeline, and even inspect site photos for safety gear.
+
+---
+
+## 🤖 Meet Your AI Construction Crew
+
+Instead of relying on a single generic AI, BuildSmartAI uses dedicated agents that each specialize in one crucial phase of construction:
 
 ```
-Builder / Contractor / Customer
-          │
-          ▼
-BuildSmartAI Web Dashboard  (frontend/index.html — Tailwind + Three.js)
-          │
-          ▼
-FastAPI Backend (main.py)   ←── REST API + Static asset serving
-          │
-          ▼
-Central AI Orchestrator     ←── Routes requests, prevents loops, logs executions
-     ┌────┴──────────────────────────────┐
-     ▼           ▼           ▼           ▼           ▼
- Agent 1      Agent 2      Agent 3   Agent 4      Agent 5
- Project      Estimation   Design    Scheduling   Site Monitoring
- Planning    &Procurement  Agent     Agent        & Progress Agent
- Agent        Agent
-     │           │           │           │           │
-     └───────────┴───────────┴───────────┴───────────┘
-                               │
-                               ▼
-                    Shared SQLite Database  (buildsmart.db)
-                    + JSON data files       (data/)
-                    + Generated artifacts   (generated_designs/, generated_reports/)
+                          You (Client / Builder / Architect)
+                                          │
+                                          ▼
+                       BuildSmartAI Web Dashboard & 3D Studio
+                                          │
+                                          ▼
+                             Central AI Coordinator
+                   ┌──────────────┬───────────────┬──────────────┐
+                   ▼              ▼               ▼              ▼
+            📋 Planning     💰 Estimation   🎨 3D Design   📅 Scheduling
+               Agent           & Buying        Agent           Agent
+                   │              │               │              │
+                   └──────────────┴───────┬───────┴──────────────┘
+                                          ▼
+                                🦺 Site Monitoring
+                                       Agent
 ```
 
-### Five AI Agents
-
-| # | Agent | Responsibility |
-|---|-------|----------------|
-| 1 | **Project Planning Agent** | Parses natural-language requirements → structured project brief |
-| 2 | **Estimation & Procurement Agent** | IS 1200 BOQ calculations → cost quotation PDF + Excel |
-| 3 | **Design Agent** | Parametric 2D floor plan + OBJ 3D mesh; supports blueprint upload (CV Mode B) |
-| 4 | **Scheduling Agent** | Critical Path Method (CPM/PERT) timeline with monsoon advisory |
-| 5 | **Site Monitoring & Progress Agent** | Computer Vision worker & PPE detection; delay analysis |
+| Agent | Role | How It Helps You |
+|---|---|---|
+| **1. 📋 Planning Agent** | Requirements Interpreter | Listens to your vision, checks local setback & zoning guidelines, and structures your dream home into an actionable project brief. |
+| **2. 💰 Estimation & Procurement Agent** | Quantity Surveyor | Calculates required cement, sand, bricks, and steel using **IS 1200** standards. Produces instant PDF quotations and Excel spreadsheets. *(No AI hallucination for math!)* |
+| **3. 🎨 Design & 3D Studio Agent** | Digital Architect | Draws 2D floor plans and renders interactive 3D WebGL models. Can also read uploaded blueprint drawings or PDFs. |
+| **4. 📅 Scheduling Agent** | Project Manager | Computes the Critical Path Method (CPM) construction schedule, sets milestones, and warns you in advance about monsoon season delays. |
+| **5. 🦺 Site Monitoring Agent** | Safety & Progress Inspector | Scans real construction site photos using Computer Vision to count workers, check for helmets/reflective vests, and flag schedule delays. |
 
 ---
 
-### BuildSmart 3D Studio (AI Architectural 2D-to-3D Conversion & Modification)
+## 🏢 BuildSmart 3D Studio: Walk Through Your Plan
 
-BuildSmart 3D Studio converts 2D architectural drawings into editable, interactive, multi-floor 3D building models:
-- **Formats Accepted**: CAD DXF, DWG pipeline, multi-page architectural PDF, high-resolution PNG/JPG drawings.
-- **Architectural Element Extraction**: Parallel wall pairing, door/window detection, room polygon extraction, and automatic scale calibration.
-- **Interactive 3D WebGL Viewport**: 360° orbit controls, pan/zoom, visual styles (Realistic PBR, Wireframe, X-Ray), view gizmo, exploded multi-story view, and BIM component property inspector.
-- **AI Conversational Modification Engine**: Natural-language architectural commands (e.g., *"Add 1 floor with 3 bedrooms and 1 washroom"*, *"Increase Master Bedroom to 4.5 by 4.0 meters"*, *"Add staircase connecting ground floor to first floor"*) translated deterministically into spatial geometry with circulation passages, door/window openings, and staircase alignments.
-- **Revision History**: Non-destructive snapshot manager with real-time Undo and Redo.
-- **3D Model Export**: Native export to `.glb` (glTF 2.0 binary) and `.obj` / `.mtl`.
+BuildSmartAI includes **3D Studio**, a web-based architectural workspace right in your browser:
 
----
-
-## Technology Stack
-
-| Component | Technology |
-|-----------|-----------|
-| Backend API | Python 3.14+, FastAPI, Uvicorn |
-| AI / NLP | Ollama + Llama 3.2 (graceful offline fallback) |
-| Database | SQLAlchemy 2 + SQLite (dev) / PostgreSQL (prod) |
-| Data Validation | Pydantic v2 |
-| Computer Vision | OpenCV 5, Ultralytics YOLO (optional) |
-| Calculations | IS 1200 deterministic Python engines (no ML for numbers) |
-| Scheduling | NetworkX (CPM graph) |
-| PDF Reports | ReportLab |
-| Excel BOQ | openpyxl |
-| 3D Viewer | Three.js + OrbitControls |
-| Frontend | HTML5 + Tailwind CSS (single-page dashboard) |
+- **Upload Real Drawings**: Drop in CAD DXF files, architectural PDFs, or clear blueprint images.
+- **Interactive 3D Viewport**: Orbit, pan, zoom, view exploded multi-story levels, or inspect room dimensions.
+- **Talk to Your Model**: Give instructions in plain English (e.g., *"Add a first floor with 2 bedrooms"*, *"Make the master bedroom 4x5 meters"*), and see the 3D model update automatically.
+- **Export Anytime**: Download ready-to-use `.glb` (3D web model) or `.obj` files to open in Blender or AutoCAD.
 
 ---
 
-## Quick Start
+## ⚡ Quick Start
 
-### 1 — Prerequisites
+You can run BuildSmartAI on your laptop in just a few minutes.
 
-```powershell
-# Python 3.11+ required (tested on 3.14.6)
-python --version
+### 1. Clone the Repository
+```bash
+git clone https://github.com/sambhav824/Build_Ai.git
+cd Build_Ai
+```
 
-# Install dependencies
+### 2. Install Dependencies
+Make sure you have **Python 3.11+** installed:
+```bash
 pip install -r requirements.txt
 ```
 
-### 2 — Configuration
+### 3. Set Up Environment & Database
+```bash
+# Copy example environment file
+cp .env.example .env
 
-```powershell
-# Copy and edit the environment file
-copy .env.example .env
-# Edit .env — set JWT_SECRET_KEY to a long random string
-```
-
-### 3 — Initialise Database
-
-```powershell
+# Initialize the local database (creates sample project BS-1001)
 python -c "from database.connection import init_db; init_db()"
 ```
 
-### 4 — (Optional) Set up Ollama for LLM NLP
-
-> When Ollama is unavailable the system falls back to deterministic regex parsing — all agents still work.
-
+### 4. Start the Application
 ```bash
-# Install Ollama from https://ollama.ai
-ollama pull llama3.2
-
-# Start the Ollama server (runs on port 11434 by default)
-ollama serve
-```
-
-### 5 — (Optional) YOLO Worker Detection
-
-Download `yolov8n.pt` from [Ultralytics](https://github.com/ultralytics/assets/releases) and place it in the project root.  
-When the file is absent the system uses contour-based silhouette detection automatically.
-
-### 6 — Run the Server
-
-```powershell
 python main.py
-# or
-uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-Open **http://127.0.0.1:8000** in your browser.
+Now open **[http://localhost:8000](http://localhost:8000)** in your browser! 🎉
+
+- **Main Dashboard**: [http://localhost:8000](http://localhost:8000)
+- **Interactive 3D Studio**: [http://localhost:8000/studio](http://localhost:8000/studio)
+- **API Documentation**: [http://localhost:8000/docs](http://localhost:8000/docs)
 
 ---
 
-## API Endpoints (Quick Reference)
+## 🔌 Optional Add-ons
 
-### Projects
+BuildSmartAI is designed to work completely out of the box with zero external services required. If you'd like extra capabilities, you can enable these optional extras:
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `POST` | `/api/projects` | Create a new project |
-| `GET`  | `/api/projects` | List all projects |
-| `GET`  | `/api/projects/{id}` | Full project details |
-| `POST` | `/api/projects/{id}/orchestrate-all` | Run full pipeline (all 5 agents) |
+- **Local LLM via Ollama**:
+  If you want rich conversational responses with local AI:
+  ```bash
+  ollama pull llama3.2
+  ollama serve
+  ```
+  *(If Ollama is not running, BuildSmartAI automatically falls back to built-in deterministic parsers so everything keeps working smoothly.)*
 
-### Planning
-
-| `POST` | `/api/projects/{id}/plan` | Planning Agent — parse requirements |
-
-### Design
-
-| Method | Endpoint |
-|--------|----------|
-| `POST` | `/api/projects/{id}/design/generate` |
-| `GET`  | `/api/projects/{id}/design` |
-| `POST` | `/api/projects/{id}/design/revise` |
-| `POST` | `/api/projects/{id}/design/approve` |
-
-### Estimation
-
-| `POST` | `/api/projects/{id}/estimate` | Generate BOQ + Quotation |
-| `GET`  | `/api/projects/{id}/boq` | Retrieve BOQ |
-| `POST` | `/api/projects/{id}/quotation/approve` | Approve quotation |
-
-### Procurement
-
-| `GET`  | `/api/projects/{id}/procurement` | Shortage analysis + purchase orders |
-| `POST` | `/api/projects/{id}/procurement/order` | Record a confirmed PO (human approval required) |
-
-### Scheduling
-
-| `POST` | `/api/projects/{id}/schedule` | CPM schedule generation |
-| `GET`  | `/api/projects/{id}/schedule` | Retrieve schedule |
-
-### Site Monitoring
-
-| `POST` | `/api/projects/{id}/monitoring/upload` | Upload site image for CV analysis |
-| `GET`  | `/api/projects/{id}/monitoring` | Latest observations |
-| `GET`  | `/api/projects/{id}/monitoring/progress` | Delay analysis |
-
-### Reports
-
-| `GET`  | `/api/projects/{id}/reports` | List available reports |
-| `GET`  | `/api/projects/{id}/reports/quotation-pdf` | Download PDF quotation |
-| `GET`  | `/api/projects/{id}/reports/boq-excel` | Download Excel BOQ |
-| `GET`  | `/api/projects/{id}/reports/floorplan-svg` | Download 2D SVG floor plan |
-
-### Health
-
-| `GET`  | `/api/health` | Platform health + agent list |
-
-Interactive API docs: **http://127.0.0.1:8000/docs**
+- **Advanced Site AI with YOLO**:
+  For deep neural-network PPE and worker detection, drop `yolov8n.pt` into the root directory. If absent, the built-in computer vision engine handles detection automatically.
 
 ---
 
-## Demo Workflow (curl)
+## 🛠️ Tech Stack at a Glance
+
+- **Backend**: FastAPI, Python 3.11+, Uvicorn
+- **Frontend**: Clean HTML5, Tailwind CSS, Three.js (WebGL 3D Viewer)
+- **Data & Storage**: SQLAlchemy 2, SQLite (dev) / PostgreSQL (prod)
+- **Engineering Engines**:
+  - Deterministic IS 1200 building material calculation formulas
+  - NetworkX for CPM/PERT critical path project scheduling
+  - ReportLab for PDF quotes & openpyxl for Excel spreadsheets
+- **Vision Pipeline**: OpenCV & Ultralytics YOLO
+
+---
+
+## 🧪 Running Tests
+
+A complete automated test suite is included:
 
 ```bash
-# 1. Create project
-curl -X POST http://127.0.0.1:8000/api/projects \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "Modern 2BHK Villa",
-    "client_name": "Mr. Sharma",
-    "plot_area_sqft": 1200,
-    "plot_length_ft": 40,
-    "plot_width_ft": 30,
-    "bhk_configuration": "2BHK",
-    "floors": 1,
-    "budget": 3500000,
-    "raw_requirements": "2BHK on 1200 sqft with modern design"
-  }'
-
-# (Use returned project_id, e.g. BS-XXXX, in subsequent calls)
-
-# 2. Run planning
-curl -X POST http://127.0.0.1:8000/api/projects/BS-XXXX/plan
-
-# 3. Generate design
-curl -X POST http://127.0.0.1:8000/api/projects/BS-XXXX/design/generate
-
-# 4. Approve design
-curl -X POST http://127.0.0.1:8000/api/projects/BS-XXXX/design/approve
-
-# 5. Generate BOQ + Quotation
-curl -X POST http://127.0.0.1:8000/api/projects/BS-XXXX/estimate
-
-# 6. Approve quotation
-curl -X POST http://127.0.0.1:8000/api/projects/BS-XXXX/quotation/approve
-
-# 7. Create CPM schedule
-curl -X POST http://127.0.0.1:8000/api/projects/BS-XXXX/schedule \
-  -H "Content-Type: application/json" \
-  -d '{"start_date": "2026-12-01"}'
-
-# 8. Download PDF quotation
-curl -o quotation.pdf http://127.0.0.1:8000/api/projects/BS-XXXX/reports/quotation-pdf
+# Run all tests
+python -m pytest tests/ -v
 ```
 
 ---
 
-## Running Tests
-
-```powershell
-# Full test suite (22 unit tests)
-python -m pytest tests/ -v --tb=short
-
-# Individual test modules
-python -m pytest tests/test_planning.py -v
-python -m pytest tests/test_design.py -v
-python -m pytest tests/test_estimation.py -v
-python -m pytest tests/test_scheduling.py -v
-python -m pytest tests/test_monitoring.py -v
-python -m pytest tests/test_orchestrator.py -v
-
-# Full system integration test (requires FastAPI TestClient)
-python -m pytest tests/test_full_system.py -v --tb=short
-```
-
----
-
-## Project Structure
+## 📁 Project Layout
 
 ```
 BuildSmartAI/
-├── main.py                        # FastAPI entrypoint + lifespan
-├── requirements.txt
-├── .env.example
-├── .gitignore
-├── README.md
-│
-├── agents/                        # AI Agent implementations
-│   ├── base_agent.py
-│   ├── orchestrator.py            # Central AI Orchestrator
-│   ├── project_planning_agent.py  # Agent 1
-│   ├── estimation_procurement_agent.py  # Agent 2
-│   ├── scheduling_agent.py        # Agent 4
-│   ├── site_monitoring_agent.py   # Agent 5
-│   └── design_agent/             # Agent 3 (sub-package)
-│       ├── design_agent.py
-│       ├── design_planner.py
-│       ├── constraint_validator.py
-│       ├── floorplan_generator.py
-│       └── design_revision.py
-│
-├── engines/                       # Deterministic calculation engines
-│   ├── area_calculator.py         # Setbacks, zoning, permissible area
-│   ├── quantity_calculator.py     # IS 1200 material quantities
-│   ├── cost_calculator.py         # Cost estimation with GST
-│   ├── geometry_engine.py         # 2D room geometry
-│   ├── scheduling_engine.py       # NetworkX CPM/PERT
-│   └── progress_analyzer.py      # Schedule vs actual comparison
-│
-├── vision/                        # Computer Vision pipeline
-│   ├── model_loader.py            # YOLO / contour fallback
-│   ├── worker_detection.py        # Personnel detection + annotation
-│   └── ppe_detection.py           # Helmet & vest HSV analysis
-│
-├── design/                        # Design file processing
-│   ├── plan_parser.py             # OpenCV blueprint contour extraction
-│   ├── model_exporter.py          # OBJ/MTL + Three.js scene JSON
-│   └── blender_generator.py       # Blender render script generator
-│
-├── reports/                       # Document generators
-│   ├── quotation_generator.py     # ReportLab PDF quotation
-│   ├── boq_generator.py           # openpyxl Excel BOQ
-│   └── progress_report.py         # Site intelligence PDF
-│
-├── database/
-│   ├── connection.py              # SQLAlchemy engine + session
-│   ├── models.py                  # ORM models
-│   └── repositories.py           # Data access layer
-│
-├── api/
-│   ├── schemas/
-│   │   ├── protocol.py            # AgentRequest / AgentResponse schemas
-│   │   └── project_schemas.py    # Request/Response Pydantic models
-│   └── routes/
-│       ├── projects.py
-│       ├── planning.py
-│       ├── design.py
-│       ├── estimation.py
-│       ├── procurement.py         # ← Procurement API
-│       ├── scheduling.py
-│       ├── monitoring.py
-│       └── reports.py
-│
-├── utils/
-│   ├── logging_config.py
-│   ├── ollama_client.py
-│   ├── unit_converter.py
-│   ├── security.py                # JWT scaffold
-│   └── file_handler.py           # Upload validation
-│
-├── data/
-│   ├── inventory.json             # Material catalogue with supplier info
-│   ├── suppliers.json             # Supplier records
-│   ├── sample_projects.json       # Demo project seed data
-│   ├── project_tasks.json         # 14 canonical CPM construction tasks
-│   └── expenses.json              # Sample cost breakdown (BS-1001)
-│
+├── main.py               # FastAPI application entry point
+├── api/                  # REST API endpoints (projects, design, estimation, etc.)
+├── agents/               # The 5 specialized AI construction agents
+├── engines/              # Deterministic math engines (IS 1200 formulas, CPM graphs)
+├── vision/               # Computer vision for worker & PPE safety inspection
+├── reports/              # Automatic PDF & Excel export generators
+├── database/             # SQLite database models and queries
 ├── frontend/
-│   └── index.html                 # Single-page dashboard (Tailwind + Three.js)
-│
-├── tests/
-│   ├── test_planning.py
-│   ├── test_design.py
-│   ├── test_estimation.py
-│   ├── test_scheduling.py
-│   ├── test_monitoring.py
-│   ├── test_plan_parser.py
-│   ├── test_orchestrator.py
-│   └── test_full_system.py
-│
-├── uploads/                       # Uploaded site images (runtime)
-├── generated_designs/             # SVG floor plans, OBJ models (runtime)
-└── generated_reports/             # PDF quotations, Excel BOQ (runtime)
+│   ├── index.html        # Main interactive web dashboard
+│   ├── studio.html       # BuildSmart 3D Studio viewer & modifier
+│   └── js/               # Frontend logic and Three.js 3D renderers
+└── tests/                # Test suite
 ```
 
 ---
 
-## Important Limitations & Disclaimers
+## 🤝 Responsible Engineering
 
-> [!IMPORTANT]
-> - **Regulatory values** (setbacks, FSI, ground coverage) are **indicative only**. Always verify with the relevant local municipal authority (MCGM, BBMP, HMDA, etc.) and a licensed architect before construction.
-> - **Material quantities and costs** are calculated using IS 1200 engineering formulas and are **illustrative estimates**. Obtain quotations from actual suppliers before budgeting.
-> - **Safety alerts** from the Site Monitoring Agent are **advisory indicators** for on-site safety officers. They do not constitute professional safety certification.
-> - **Worker counts** reflect detected personnel in a single image frame and are not measures of labour productivity.
-> - **No automatic payments or orders** are made by this system. All procurement actions require explicit human approval.
-> - **Ollama / LLM** is used only for natural-language parsing. All structural and financial calculations use deterministic Python engines.
+- **Real Math, Not Guesswork**: Material quantities, structural setbacks, and financial calculations are derived using deterministic formulas (IS 1200) rather than generative text guesses.
+- **Human-in-the-Loop**: Generated purchase orders and final design revisions require your review and explicit approval.
+- **Safety First**: Site monitoring alerts are advisory tools designed to assist on-site engineers and safety officers.
 
 ---
 
-## Licence
+## 📄 License & Contributing
 
-BuildSmartAI is a proprietary platform. All rights reserved.  
-Sample data and generated reports are for demonstration purposes only.
+Built with ❤️ for architects, builders, and aspiring home owners.  
+Contributions, issues, and ideas are warmly welcome! Feel free to open an issue or pull request on [GitHub](https://github.com/sambhav824/Build_Ai).
